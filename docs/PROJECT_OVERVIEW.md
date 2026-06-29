@@ -9,7 +9,9 @@ companion to the Year 1 Marketing Calendar, `BB-LL-CAL-2026-001`).
 
 The site translates the plan into a navigable web experience: executive summary,
 market opportunity, objectives, audience, channel strategy, launch approach,
-measurement framework, and a clear three-month commercial investment.
+measurement framework, SA-verified KPI benchmarks, and a clear three-month
+commercial investment. The **signed** scope of work is downloadable as a PDF
+throughout the site.
 
 ## Purpose
 
@@ -44,7 +46,9 @@ budget); the retainer covers Broadbrand's strategy, build, creative and optimisa
 - **Tailwind CSS v4**
 - **shadcn/ui** primitives (Radix base)
 - **lucide-react** icons
-- Fonts: **Sora** (headings), **Inter** (body), **JetBrains Mono** (mono)
+- Fonts: **Poppins** (the Liquid Lighting brand typeface) + **JetBrains Mono** (figures)
+- Brand identity (gold `#c5a028`, charcoal `#1e1e1e`, logo) pulled directly from the
+  Liquid Lighting Shopify storefront for a pixel-faithful match.
 
 ## Deployment environment
 

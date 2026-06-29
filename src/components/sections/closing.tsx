@@ -13,7 +13,7 @@ export function Closing() {
         className="pointer-events-none absolute bottom-[-16rem] left-1/2 size-[44rem] -translate-x-1/2 rounded-full opacity-50 blur-3xl"
         style={{
           background:
-            "radial-gradient(circle, oklch(0.795 0.124 82 / 16%), transparent 65%)",
+            "radial-gradient(circle, rgb(197 160 40 / 0.18), transparent 65%)",
         }}
       />
       <div className="relative mx-auto w-full max-w-4xl px-6 py-28 text-center sm:py-36 lg:px-8">

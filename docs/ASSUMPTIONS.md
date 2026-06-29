@@ -1,13 +1,19 @@
 # Assumptions
 
-This proposal site presents a **directional strategy**. The assumptions below
-frame what the plan is — and is not — at the point of presentation.
+This proposal site presents the **signed** 3-month Launch Marketing Plan
+(signed 14 May 2026 by Taschyana Fourie; PO `FR/DSGECOMM_MKTG_05.26`). The
+assumptions below frame what the plan is — and is not.
 
 ## Data & access
 
 - **No internal data access.** The plan was authored without access to Liquid
   Lighting's live analytics, ad accounts, Shopify back-end, margin data, or
   historical performance. Nothing here is derived from confidential client data.
+- **Benchmarks are external, cited SA market data.** The KPI targets and CPA
+  scenarios (Benchmarks section) are modelled from published South-African
+  sources — Adbot SA 2025, ECDB SA, Syte SA 2025, Shopify SA 2026 — chosen
+  deliberately over international averages, which overstate SA e-commerce costs.
+  They are planning benchmarks, validated against live performance after launch.
 - **Source of truth is the written plan.** All strategic content is drawn from
   `BB-LL-LAUNCH-2026-002` and its companion calendar `BB-LL-CAL-2026-001`.
 - **No live integrations.** The site is static marketing content. It does not

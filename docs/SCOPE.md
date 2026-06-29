@@ -9,7 +9,7 @@ sections with a sticky nav for in-page navigation.
 
 | # | Section                     | Anchor         | Content |
 | - | --------------------------- | -------------- | ------- |
-| — | Hero                        | `#top`         | Title, lede, document metadata, primary CTAs |
+| — | Hero                        | `#top`         | Title, signed status, document metadata, primary CTAs, signed-PDF download |
 | 01| Executive Summary           | `#summary`     | The launch in one page; stat row; focus pillars |
 | 02| The Opportunity             | `#opportunity` | Market context; three pillars; competitive picture; credibility |
 | 03| Objectives & Success Measures | `#objectives` | Objectives table; CPA / secondary / tertiary metric hierarchy |
@@ -17,9 +17,16 @@ sections with a sticky nav for in-page navigation.
 | 05| Channel Strategy            | `#channels`    | Tabs: Paid search · Paid social · SEO & email |
 | 06| The Launch Approach         | `#approach`    | Soft launch → ramp gate → scale → hard launch timeline; Day 1 checklist |
 | 07| Measurement & Optimisation  | `#measurement` | Verification gate; weekly rhythm; test programme; reporting |
-| 08| Investment                  | `#investment`  | Line items, what's covered, 3-month total |
+| 08| KPIs & SA-Verified Benchmarks | `#benchmarks` | SA input data, derived CPA scenarios, 90-day KPI targets, paid split, sources |
+| 09| Investment                  | `#investment`  | Line items, what's covered, 3-month total, signed-PDF download |
 | — | Closing                     | `#closing`     | "Let's switch it on" CTA |
-| — | Footer                      | —              | Agency, doc references, confidentiality |
+| — | Footer                      | —              | Agency details, doc/plan refs, signed status, signed-PDF download |
+
+## Downloadable asset
+
+The **signed scope of work** (`Liquid Lighting Launch Marketing Plan - May 2026
+SIGNED.pdf`) is served from `public/` and offered for download from the header,
+hero, Investment section and footer.
 
 ## What is excluded
 

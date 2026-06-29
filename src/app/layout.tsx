@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Sora, JetBrains_Mono } from "next/font/google";
+import { Poppins, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+// Poppins is the Liquid Lighting brand typeface (Shopify theme: header/body/menu).
+const poppins = Poppins({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const sora = Sora({
+const poppinsHeading = Poppins({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
@@ -54,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${inter.variable} ${sora.variable} ${jetbrainsMono.variable} h-full`}
+      className={`dark ${poppins.variable} ${poppinsHeading.variable} ${jetbrainsMono.variable} h-full`}
     >
       <body className="min-h-full bg-background text-foreground">{children}</body>
     </html>

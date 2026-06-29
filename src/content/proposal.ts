@@ -7,13 +7,32 @@
 export const meta = {
   client: "Liquid Lighting (Pty) Ltd",
   agency: "Broadbrand · Digital Agency",
+  agencyLegal: "Broadbrand Services (Pty) Ltd",
+  agencyAddress: "Parkhurst HQ · 15 6th Street, Parkhurst, Johannesburg",
+  agencyPhone: "+27 11 759 7000",
   docRef: "BB-LL-LAUNCH-2026-002",
+  planRef: "LL-LAUNCH-MKT (Rev 1)",
+  poNumber: "FR/DSGECOMM_MKTG_05.26",
   companionRef: "BB-LL-CAL-2026-001",
   title: "Launch Marketing Plan",
-  subtitle: "Year 1 Go-to-Market Strategy",
+  subtitle: "3-Month Launch Plan",
   tagline: "DESIGN · INNOVATE · ILLUMINATE",
-  lede: "A phased digital launch and growth strategy for Liquid Lighting's direct-to-consumer and trade storefront.",
+  lede: "A phased digital launch and growth strategy for Liquid Lighting's direct-to-consumer storefront — paid search and shopping, paid social, SEO, and Shopify-native email.",
   confidentiality: "Confidential — prepared for Liquid Lighting (Pty) Ltd",
+  // Signed SOW status
+  status: "Signed",
+  issuedDate: "4 May 2026",
+  validUntil: "4 June 2026",
+  signedBy: "Taschyana Fourie",
+  signedDate: "14 May 2026",
+} as const;
+
+export const download = {
+  label: "Download signed plan (PDF)",
+  shortLabel: "Signed PDF",
+  href: "/liquid-lighting-launch-marketing-plan-signed.pdf",
+  filename: "Liquid-Lighting-Launch-Marketing-Plan-Signed.pdf",
+  note: "The signed scope of work — Broadbrand Services (Pty) Ltd · Ref BB-LL-LAUNCH-2026-002.",
 } as const;
 
 export const nav = [
@@ -24,6 +43,7 @@ export const nav = [
   { id: "channels", label: "Channels" },
   { id: "approach", label: "Approach" },
   { id: "measurement", label: "Measurement" },
+  { id: "benchmarks", label: "Benchmarks" },
   { id: "investment", label: "Investment" },
 ] as const;
 
@@ -294,19 +314,23 @@ export const channels = {
     email: {
       title: "Email & lifecycle flows",
       intro:
-        "The email programme runs on two tracks. Campaigns — a monthly newsletter — carry seasonal merchandising, new arrivals and offers. Always-on flows run independently and recover revenue automatically:",
+        "The email programme runs on Shopify's native tool — a branded, mobile-rendered master template with plain-text fallback, and the first 10,000 sends a month included. Weekly campaign sends and product drops sit alongside four always-on automations that recover revenue independently:",
       flows: [
         {
-          title: "Welcome",
-          body: "Introduces the brand and the range to new subscribers, with an A/B test between social-proof and product-led variants.",
+          title: "Abandoned cart",
+          body: "Three-stage sequence at 1 hour, 24 hours and 72 hours, with native cart-token discount codes on the second and third sends. The headline retention asset.",
         },
         {
-          title: "Abandoned cart & browse",
-          body: "Recovers shoppers who left before buying — the highest-ROI automation in any store.",
+          title: "Browse abandonment",
+          body: "Two-stage send triggered on a viewed product without an add-to-cart, for known contacts.",
         },
         {
           title: "Post-purchase & review",
-          body: "Drives cross-sell, repeat purchase and the reviews that fuel social proof.",
+          body: "Thank-you on order, then a review request at day 14 — driving repeat purchase and the social proof that fuels paid.",
+        },
+        {
+          title: "Welcome",
+          body: "Three-email sequence triggered by the exit-intent welcome offer or a first purchase, introducing the brand and the range.",
         },
       ],
     },
@@ -403,7 +427,57 @@ export const measurement = {
     "Performance is tracked in a live dashboard and reviewed monthly with a written read of what changed, why, and what we are doing next. The engagement window closes with a full review and data export that sets the baseline for the rest of the year.",
 } as const;
 
-/* ── 08 · Investment ─────────────────────────────────────── */
+/* ── 08 · KPIs & SA-Verified Benchmarks ──────────────────── */
+
+export const benchmarks = {
+  lede: "Cost per purchase (CPA) is the headline KPI, and it is set against South-African-specific benchmark data — not international averages, which materially overstate SA e-commerce costs.",
+  inputs: [
+    { metric: "Google Ads average CPC — all SA industries", value: "R4 – R6", source: "Adbot SA 2025" },
+    { metric: "Google Ads average CTR — SA", value: "9.1%", source: "Adbot SA 2025" },
+    { metric: "Meta Ads typical CPC — SA e-commerce", value: "R15 – R30", source: "Syte SA 2025" },
+    { metric: "E-commerce conversion rate — SA", value: "1.5%", source: "ECDB SA 2024" },
+    { metric: "Add-to-cart rate — SA", value: "9.5 – 10.0%", source: "ECDB SA 2025" },
+    { metric: "Cart abandonment rate — SA", value: "84.0 – 84.5%", source: "ECDB SA 2025" },
+  ],
+  cpaModel: {
+    note: "Cost per purchase = CPC ÷ CVR. Lighting is moderately competitive in SA paid search, so we model slightly above the SA average CPC. The table shows the resulting CPA at three conversion-rate scenarios.",
+    rows: [
+      { scenario: "Google Ads — conservative", cpc: "R8", cvr: "1.5%", cpa: "R533" },
+      { scenario: "Google Ads — target", cpc: "R8", cvr: "2.0%", cpa: "R400" },
+      { scenario: "Google Ads — optimised (month 3)", cpc: "R6", cvr: "2.5%", cpa: "R240", highlight: true },
+      { scenario: "Meta Ads — conservative", cpc: "R25", cvr: "1.5%", cpa: "R1,667" },
+      { scenario: "Meta Ads — target", cpc: "R20", cvr: "2.0%", cpa: "R1,000" },
+      { scenario: "Blended target — 90-day plan", cpc: "Mix", cvr: "Mix", cpa: "R500 – R800", highlight: true },
+    ],
+  },
+  kpiTargets: {
+    note: "The 90-day KPI targets, ramping month over month as tracking is verified and optimisation compounds.",
+    columns: ["KPI", "Month 1", "Month 2", "Month 3"],
+    rows: [
+      { kpi: "Cost per purchase (blended)", m1: "R800", m2: "R650", m3: "R500" },
+      { kpi: "Conversion rate (overall)", m1: "1.2%", m2: "1.5%", m3: "2.0%" },
+      { kpi: "Abandoned cart recovery rate", m1: "8%", m2: "12%", m3: "15%" },
+      { kpi: "Organic sessions (m-o-m growth)", m1: "Baseline", m2: "+30%", m3: "+60%" },
+    ],
+  },
+  paidSplit: {
+    title: "Indicative paid split — first 30 days",
+    note: "Google Ads budget allocation for the first 30 days, then reset from real data at day 30.",
+    items: [
+      { label: "Shopping / PMax", pct: 50 },
+      { label: "Non-brand Search", pct: 35 },
+      { label: "Brand Search", pct: 15 },
+    ],
+  },
+  sources: [
+    "Adbot — Google Ads Benchmarks, SA Industry 2025 (adbot.co.za, n = 1,200+ SA search campaigns)",
+    "ECDB — SA E-commerce Benchmarks (ecommercedb.com)",
+    "Syte SA — Facebook Advertising Costs for E-commerce 2025 (syte.co.za)",
+    "Shopify SA — E-commerce Conversion Rate 2026 (shopify.com/za)",
+  ],
+} as const;
+
+/* ── 09 · Investment ─────────────────────────────────────── */
 
 export const investment = {
   lede: "A focused three-month engagement window — the period where the funnel is proven, acquisition is driven to target, and the cadences that carry the brand are locked in.",
@@ -435,7 +509,7 @@ export const investment = {
     "Rolling A/B test programme across site, paid and owned",
     "Live performance dashboard and monthly written review",
   ],
-  note: "Figures exclude VAT. PPC media spend is paid directly to the advertising platforms and is fully allocated to working budget. The retainer covers Broadbrand's strategy, build, creative and optimisation. Spend levels are reviewed at the end of the engagement window before moving to steady-state.",
+  note: "Figures exclude VAT. PPC media spend is funded by Liquid Lighting and paid directly to Google and Meta — Broadbrand adds no fee on top of media spend. Platform costs (the Shopify plan and any Shopify Email overage above 10,000 sends per month) are billed direct and sit outside this scope, as does the Shopify storefront build. Spend levels are reviewed at the end of the engagement window before moving to steady-state.",
 } as const;
 
 /* ── Closing ─────────────────────────────────────────────── */

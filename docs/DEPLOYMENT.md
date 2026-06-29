@@ -13,16 +13,15 @@ zero configuration — no `vercel.json` is needed.
 
 From the project root (`liquid-lighting-proposal/`):
 
+The repository is **https://github.com/broadbrandsa/LL-marketing**.
+
 ```bash
 # A git repo is already initialised by create-next-app.
 git add -A
 git commit -m "Liquid Lighting launch proposal site"
 
-# Create the remote and push (GitHub CLI):
-gh repo create liquid-lighting-proposal --private --source=. --remote=origin --push
-
-# …or manually:
-git remote add origin git@github.com:<org>/liquid-lighting-proposal.git
+# Point at the Broadbrand repo and push:
+git remote add origin https://github.com/broadbrandsa/LL-marketing.git
 git branch -M main
 git push -u origin main
 ```

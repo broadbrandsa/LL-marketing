@@ -8,6 +8,7 @@ import { Audience } from "@/components/sections/audience";
 import { Channels } from "@/components/sections/channels";
 import { LaunchApproach } from "@/components/sections/launch-approach";
 import { Measurement } from "@/components/sections/measurement";
+import { Benchmarks } from "@/components/sections/benchmarks";
 import { Investment } from "@/components/sections/investment";
 import { Closing } from "@/components/sections/closing";
 
@@ -24,6 +25,7 @@ export default function Home() {
         <Channels />
         <LaunchApproach />
         <Measurement />
+        <Benchmarks />
         <Investment />
         <Closing />
       </main>

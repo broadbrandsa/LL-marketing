@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
-import { nav } from "@/content/proposal";
+import { nav, download } from "@/content/proposal";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -44,7 +44,13 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
+          <Button asChild size="sm" variant="ghost" className="text-muted-foreground hover:text-foreground">
+            <a href={download.href} download={download.filename} target="_blank" rel="noopener" aria-label="Download signed plan PDF">
+              <Download className="size-4" />
+              {download.shortLabel}
+            </a>
+          </Button>
           <Button asChild size="sm">
             <a href="#investment">View investment</a>
           </Button>
@@ -82,6 +88,18 @@ export function SiteHeader() {
           <Button asChild size="sm" className="mt-2">
             <a href="#investment" onClick={() => setOpen(false)}>
               View investment
+            </a>
+          </Button>
+          <Button asChild size="sm" variant="outline">
+            <a
+              href={download.href}
+              download={download.filename}
+              target="_blank"
+              rel="noopener"
+              onClick={() => setOpen(false)}
+            >
+              <Download className="size-4" />
+              {download.label}
             </a>
           </Button>
         </nav>

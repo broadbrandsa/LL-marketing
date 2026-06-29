@@ -1,7 +1,8 @@
-import { Check, Info } from "lucide-react";
+import { Check, Info, Download, FileText } from "lucide-react";
 import { Section, SectionHeading } from "@/components/section";
 import { Reveal } from "@/components/reveal";
-import { investment } from "@/content/proposal";
+import { Button } from "@/components/ui/button";
+import { investment, download, meta } from "@/content/proposal";
 
 const fmt = (n: number) =>
   `${investment.currency}${n.toLocaleString("en-ZA")}`;
@@ -14,7 +15,7 @@ export function Investment() {
   return (
     <Section id="investment" className="border-t border-border bg-[var(--ink)]/40">
       <SectionHeading
-        index="08"
+        index="09"
         eyebrow="Investment"
         title="The engagement"
         lede={investment.lede}
@@ -121,6 +122,31 @@ export function Investment() {
         <div className="flex max-w-4xl gap-3 rounded-xl border-l-2 border-gold/50 bg-surface/40 px-5 py-4">
           <Info className="mt-0.5 size-4 shrink-0 text-gold/70" aria-hidden />
           <p className="text-sm leading-relaxed text-muted-foreground">{investment.note}</p>
+        </div>
+      </Reveal>
+
+      {/* Signed SOW download */}
+      <Reveal className="mt-6" delay={120}>
+        <div className="flex flex-col gap-4 rounded-2xl border border-gold/25 bg-gold-soft p-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-start gap-4">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl border border-gold/30 bg-background/30">
+              <FileText className="size-6 text-gold" aria-hidden />
+            </div>
+            <div>
+              <h3 className="font-heading text-base font-semibold text-foreground">
+                Signed scope of work
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {download.note} Signed by {meta.signedBy}, {meta.signedDate}. PO {meta.poNumber}.
+              </p>
+            </div>
+          </div>
+          <Button asChild size="lg" className="shrink-0">
+            <a href={download.href} download={download.filename} target="_blank" rel="noopener">
+              <Download className="size-4" />
+              {download.shortLabel}
+            </a>
+          </Button>
         </div>
       </Reveal>
     </Section>

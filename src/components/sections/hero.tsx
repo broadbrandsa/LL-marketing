@@ -1,7 +1,7 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LogoMark } from "@/components/logo";
-import { meta } from "@/content/proposal";
+import { meta, download } from "@/content/proposal";
 
 export function Hero() {
   return (
@@ -16,7 +16,7 @@ export function Hero() {
         className="pointer-events-none absolute -top-40 left-1/2 size-[42rem] -translate-x-1/2 rounded-full opacity-60 blur-3xl"
         style={{
           background:
-            "radial-gradient(circle, oklch(0.795 0.124 82 / 14%), transparent 65%)",
+            "radial-gradient(circle, rgb(197 160 40 / 0.16), transparent 65%)",
         }}
       />
       {/* Concentric ring motif, echoing the brand mark */}
@@ -30,10 +30,14 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-32 sm:pt-40 lg:px-8 lg:pb-28">
-        <div className="fade-in flex items-center gap-3">
+        <div className="fade-in flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-gold">
             <LogoMark className="size-4" />
             {meta.subtitle}
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted-foreground">
+            <BadgeCheck className="size-3.5 text-gold" aria-hidden />
+            {meta.status} · {meta.signedDate}
           </span>
         </div>
 
@@ -65,6 +69,12 @@ export function Hero() {
             <a href="#investment">
               See the investment
               <ArrowUpRight className="size-4" />
+            </a>
+          </Button>
+          <Button asChild size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
+            <a href={download.href} download={download.filename} target="_blank" rel="noopener">
+              <Download className="size-4" />
+              {download.label}
             </a>
           </Button>
         </div>

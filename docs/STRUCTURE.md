@@ -6,6 +6,9 @@
 liquid-lighting-proposal/
 ├── docs/                       # Project documentation (this folder)
 ├── public/
+│   ├── ll-icon.png             # Brand "liquid wave" spiral mark (from Shopify storefront)
+│   ├── liquid-lighting-logo.png # Full brand lockup
+│   ├── liquid-lighting-launch-marketing-plan-signed.pdf  # Signed SOW (download)
 │   └── images/                 # Static image assets (add brand/lifestyle imagery here)
 ├── src/
 │   ├── app/
@@ -23,6 +26,7 @@ liquid-lighting-proposal/
 │   │   │   ├── channels.tsx
 │   │   │   ├── launch-approach.tsx
 │   │   │   ├── measurement.tsx
+│   │   │   ├── benchmarks.tsx   # KPIs & SA-verified benchmarks (from signed SOW)
 │   │   │   ├── investment.tsx
 │   │   │   └── closing.tsx
 │   │   ├── logo.tsx            # Liquid Lighting wordmark + orb mark (SVG)
@@ -70,8 +74,10 @@ Every section follows the same pattern for visual and structural consistency:
 
 ## Theming
 
-- The brand theme is defined once in `src/app/globals.css` as CSS variables
-  (deep warm charcoal background, signal-gold accent).
+- The brand theme is defined once in `src/app/globals.css` as CSS variables,
+  using the **exact** Liquid Lighting identity pulled from the Shopify storefront
+  theme (`config/settings_data.json`): gold `#c5a028`, background `#1e1e1e`,
+  footer `#0a0a0a`, borders `#2a2a2a`, muted `#a1a1a1`, white text, **Poppins** type.
 - The whole site runs in a single dark theme (`<html class="dark">`); both
   `:root` and `.dark` are populated so shadcn components resolve correctly.
 - Brand tokens exposed to Tailwind: `gold`, `gold-muted`, `gold-soft`, `ink`,
