@@ -10,6 +10,7 @@ import { LaunchApproach } from "@/components/sections/launch-approach";
 import { Measurement } from "@/components/sections/measurement";
 import { Benchmarks } from "@/components/sections/benchmarks";
 import { Investment } from "@/components/sections/investment";
+import { Glossary } from "@/components/sections/glossary";
 import { Closing } from "@/components/sections/closing";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
         <Measurement />
         <Benchmarks />
         <Investment />
+        <Glossary />
         <Closing />
       </main>
       <SiteFooter />

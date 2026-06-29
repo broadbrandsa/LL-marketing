@@ -45,6 +45,7 @@ export const nav = [
   { id: "measurement", label: "Measurement" },
   { id: "benchmarks", label: "Benchmarks" },
   { id: "investment", label: "Investment" },
+  { id: "glossary", label: "Glossary" },
 ] as const;
 
 /* ── 01 · Executive Summary ──────────────────────────────── */
@@ -450,19 +451,93 @@ export const benchmarks = {
       { scenario: "Blended target — 90-day plan", cpc: "Mix", cvr: "Mix", cpa: "R500 – R800", highlight: true },
     ],
   },
-  kpiTargets: {
-    note: "The 90-day KPI targets, ramping month over month as tracking is verified and optimisation compounds.",
-    columns: ["KPI", "Month 1", "Month 2", "Month 3"],
+  monthly: {
+    note: "What success looks like, ramping month over month as tracking is verified and optimisation compounds.",
+    metricOrder: [
+      "Conversion rate",
+      "Add-to-cart rate",
+      "AOV target",
+      "ROAS",
+      "Blended CPA",
+      "Cart recovery",
+      "Organic sessions",
+    ],
+    months: [
+      {
+        phase: "Month 1",
+        label: "Establish",
+        metrics: {
+          "Conversion rate": "1.2%",
+          "Add-to-cart rate": "7–8%",
+          "AOV target": "R1,500–2,000",
+          "ROAS": "2–3×",
+          "Blended CPA": "≤ R800",
+          "Cart recovery": "8%",
+          "Organic sessions": "Baseline",
+        },
+      },
+      {
+        phase: "Month 2",
+        label: "Optimise",
+        metrics: {
+          "Conversion rate": "1.5%",
+          "Add-to-cart rate": "8–9%",
+          "AOV target": "R2,000–2,500",
+          "ROAS": "3–4×",
+          "Blended CPA": "≤ R650",
+          "Cart recovery": "12%",
+          "Organic sessions": "+30%",
+        },
+      },
+      {
+        phase: "Month 3",
+        label: "Compound",
+        metrics: {
+          "Conversion rate": "2.0%",
+          "Add-to-cart rate": "9–10%",
+          "AOV target": "R2,500+",
+          "ROAS": "4×+",
+          "Blended CPA": "≤ R500",
+          "Cart recovery": "15%",
+          "Organic sessions": "+60%",
+        },
+      },
+    ],
+  },
+  comparison: {
+    note: "How the Month 3 targets stack up against South-African and global benchmarks — ambitious but grounded.",
     rows: [
-      { kpi: "Cost per purchase (blended)", m1: "R800", m2: "R650", m3: "R500" },
-      { kpi: "Conversion rate (overall)", m1: "1.2%", m2: "1.5%", m3: "2.0%" },
-      { kpi: "Abandoned cart recovery rate", m1: "8%", m2: "12%", m3: "15%" },
-      { kpi: "Organic sessions (m-o-m growth)", m1: "Baseline", m2: "+30%", m3: "+60%" },
+      { metric: "Conversion rate — SA average", benchmark: "1.0 – 1.5%", ll: "2.0%" },
+      { metric: "Conversion rate — home decor (global)", benchmark: "1.4%", ll: "2.0%" },
+      { metric: "Add-to-cart rate — SA", benchmark: "9.4 – 10%", ll: "9 – 10%" },
+      { metric: "Cart abandonment — SA", benchmark: "83.5 – 84.5%", ll: "—" },
+      { metric: "Cart recovery rate — SA", benchmark: "~5 – 8% typical", ll: "15%" },
+      { metric: "ROAS — SA e-commerce target", benchmark: "4 : 1", ll: "4×+" },
+    ],
+  },
+  sector: {
+    note: "Lighting sits in home decor — a higher-consideration, lower-CVR category than SA e-commerce as a whole. We plan for that and engineer around it.",
+    benchmarks: [
+      { name: "Home decor CVR (global)", value: "1.4%" },
+      { name: "SA e-commerce CVR (all sectors)", value: "1.0 – 1.5%" },
+      { name: "Home & garden AOV (global)", value: "~$110 · ~R2,000" },
+      { name: "SA e-commerce AOV (all sectors)", value: "~$104 · ~R1,900" },
+      { name: "SA add-to-cart rate", value: "9.4 – 10%" },
+      { name: "SA cart abandonment", value: "83.5 – 84.5%" },
+    ],
+    whyTitle: "Why lighting converts lower — and how we win",
+    why: [
+      { point: "High-consideration purchase", note: "Needs context and guidance to convert." },
+      { point: "Spatial visualisation gap", note: "Buyers can't picture the fixture in their room — the key friction." },
+      { point: "Mobile-first SA shoppers", note: "~70% of traffic; the journey is built mobile-first." },
+      { point: "Trust signals (PayFast etc.)", note: "Local payment and security cues are essential." },
+      { point: "Surprise shipping cost", note: "Kills ~47% of checkouts — free delivery removes it." },
+      { point: "Room-context imagery", note: "The single biggest CVR lever — light shown in real rooms." },
     ],
   },
   paidSplit: {
-    title: "Indicative paid split — first 30 days",
-    note: "Google Ads budget allocation for the first 30 days, then reset from real data at day 30.",
+    title: "Google Ads campaign split — first 30 days",
+    note: "How the Google Ads half of the media budget is allocated across campaign types for the first 30 days, then reset from real data at day 30.",
     items: [
       { label: "Shopping / PMax", pct: 50 },
       { label: "Non-brand Search", pct: 35 },
@@ -488,8 +563,20 @@ export const investment = {
       name: "PPC media spend",
       monthly: 30000,
       detail:
-        "Working ad budget across the six launch campaigns — Google (Brand, Non-brand, Performance Max) and Meta (Prospecting, Retargeting, Catalogue). Paid to the platforms; managed against the ramp gate and CPA target.",
+        "Working ad budget across the six launch campaigns, split 50/50 between Google and Meta. Paid directly to the platforms; managed against the ramp gate and CPA target.",
       tag: "Media",
+      split: [
+        {
+          label: "Google Ads",
+          monthly: 15000,
+          note: "Brand, Non-brand & Performance Max / Shopping",
+        },
+        {
+          label: "Meta Ads",
+          monthly: 15000,
+          note: "Prospecting, Retargeting & Catalogue / Shop",
+        },
+      ],
     },
     {
       name: "Broadbrand retainer",
@@ -510,6 +597,36 @@ export const investment = {
     "Live performance dashboard and monthly written review",
   ],
   note: "Figures exclude VAT. PPC media spend is funded by Liquid Lighting and paid directly to Google and Meta — Broadbrand adds no fee on top of media spend. Platform costs (the Shopify plan and any Shopify Email overage above 10,000 sends per month) are billed direct and sit outside this scope, as does the Shopify storefront build. Spend levels are reviewed at the end of the engagement window before moving to steady-state.",
+} as const;
+
+/* ── Appendix · Glossary ─────────────────────────────────── */
+
+export const glossary = {
+  lede: "A quick reference for the abbreviations and metrics used throughout this plan.",
+  terms: [
+    { term: "CPA", full: "Cost per acquisition", def: "What it costs to acquire one paying customer. The plan's headline KPI." },
+    { term: "ROAS", full: "Return on ad spend", def: "Revenue earned for every R1 of media spend — e.g. 4× means R4 back per R1." },
+    { term: "CVR", full: "Conversion rate", def: "The share of site visits that end in a purchase." },
+    { term: "AOV", full: "Average order value", def: "The average rand value of each order placed." },
+    { term: "ATC", full: "Add-to-cart rate", def: "The share of visits where a product is added to the cart." },
+    { term: "CPC", full: "Cost per click", def: "The average price paid for a single ad click." },
+    { term: "CTR", full: "Click-through rate", def: "The share of ad impressions that earn a click." },
+    { term: "PPC", full: "Pay per click", def: "Paid advertising charged per click — the Google and Meta ad spend." },
+    { term: "PMax", full: "Performance Max", def: "Google's automated campaign type that spans all of Google's surfaces." },
+    { term: "PDP", full: "Product detail page", def: "An individual product page on the storefront." },
+    { term: "SEO", full: "Search engine optimisation", def: "Earning unpaid (organic) visibility in search results." },
+    { term: "RSA", full: "Responsive search ad", def: "A Google text ad that auto-mixes headlines and descriptions." },
+    { term: "SA", full: "South Africa(n)", def: "All benchmarks are set against South-African market data." },
+    { term: "SKU", full: "Stock keeping unit", def: "A unique code identifying an individual product variant." },
+    { term: "CRM", full: "Customer relationship management", def: "Systems and processes for managing ongoing customer relationships." },
+    { term: "B2C", full: "Business-to-consumer", def: "Selling directly to individual shoppers (the launch posture)." },
+    { term: "Merchant Centre", full: "Google Merchant Center", def: "Where the product feed lives that powers Shopping and PMax ads." },
+    { term: "Flows", full: "Shopify Flows", def: "Automated, triggered email sequences (welcome, abandoned cart, etc.)." },
+    { term: "A/B test", full: "Split test", def: "Comparing two variants to see which performs better." },
+    { term: "IP rating", full: "Ingress Protection rating", def: "How well a fixture resists dust and water — key for outdoor and bathroom lighting." },
+    { term: "CRI", full: "Colour Rendering Index", def: "How accurately a light source renders colour, scored 0–100." },
+    { term: "Kelvin (K)", full: "Colour temperature", def: "How warm or cool a light appears, measured in kelvin." },
+  ],
 } as const;
 
 /* ── Closing ─────────────────────────────────────────────── */

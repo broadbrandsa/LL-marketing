@@ -48,6 +48,31 @@ export function Investment() {
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   {line.detail}
                 </p>
+
+                {"split" in line && line.split && (
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                    {line.split.map((s) => (
+                      <div
+                        key={s.label}
+                        className="rounded-xl border border-border bg-background/30 p-4"
+                      >
+                        <div className="flex items-baseline justify-between gap-2">
+                          <span className="font-heading text-sm font-semibold text-foreground">
+                            {s.label}
+                          </span>
+                          <span className="font-mono text-sm font-bold text-gold">
+                            {fmt(s.monthly)}
+                            <span className="text-xs font-normal text-muted-foreground">/mo</span>
+                          </span>
+                        </div>
+                        <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                          {s.note}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 <div className="mt-4 flex items-center justify-between border-t border-border pt-4 text-sm">
                   <span className="text-muted-foreground">
                     Over {termMonths} months

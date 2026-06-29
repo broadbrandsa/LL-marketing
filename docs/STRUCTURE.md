@@ -26,8 +26,9 @@ liquid-lighting-proposal/
 │   │   │   ├── channels.tsx
 │   │   │   ├── launch-approach.tsx
 │   │   │   ├── measurement.tsx
-│   │   │   ├── benchmarks.tsx   # KPIs & SA-verified benchmarks (from signed SOW)
-│   │   │   ├── investment.tsx
+│   │   │   ├── benchmarks.tsx   # KPIs & SA-verified benchmarks (month-by-month + sector context)
+│   │   │   ├── investment.tsx   # incl. 50/50 Google/Meta media split
+│   │   │   ├── glossary.tsx     # appendix — index of terms & abbreviations
 │   │   │   └── closing.tsx
 │   │   ├── logo.tsx            # Liquid Lighting wordmark + orb mark (SVG)
 │   │   ├── reveal.tsx          # Scroll-reveal wrapper (IntersectionObserver)

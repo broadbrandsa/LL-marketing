@@ -17,8 +17,9 @@ sections with a sticky nav for in-page navigation.
 | 05| Channel Strategy            | `#channels`    | Tabs: Paid search · Paid social · SEO & email |
 | 06| The Launch Approach         | `#approach`    | Soft launch → ramp gate → scale → hard launch timeline; Day 1 checklist |
 | 07| Measurement & Optimisation  | `#measurement` | Verification gate; weekly rhythm; test programme; reporting |
-| 08| KPIs & SA-Verified Benchmarks | `#benchmarks` | SA input data, derived CPA scenarios, 90-day KPI targets, paid split, sources |
-| 09| Investment                  | `#investment`  | Line items, what's covered, 3-month total, signed-PDF download |
+| 08| KPIs & SA-Verified Benchmarks | `#benchmarks` | Month-by-month targets (CVR, ATC, AOV, ROAS, CPA, cart recovery, organic), LL-vs-benchmark comparison, derived CPA scenarios, SA inputs, sector context, Google Ads campaign split, sources |
+| 09| Investment                  | `#investment`  | Line items (PPC media split 50/50 Google/Meta), what's covered, 3-month total, signed-PDF download |
+| — | Glossary (Appendix)         | `#glossary`    | Index of terms & abbreviations (CPA, ROAS, CVR, AOV, …) |
 | — | Closing                     | `#closing`     | "Let's switch it on" CTA |
 | — | Footer                      | —              | Agency details, doc/plan refs, signed status, signed-PDF download |
 
