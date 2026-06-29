@@ -599,6 +599,19 @@ export const investment = {
   note: "Figures exclude VAT. PPC media spend is funded by Liquid Lighting and paid directly to Google and Meta — Broadbrand adds no fee on top of media spend. Platform costs (the Shopify plan and any Shopify Email overage above 10,000 sends per month) are billed direct and sit outside this scope, as does the Shopify storefront build. Spend levels are reviewed at the end of the engagement window before moving to steady-state.",
 } as const;
 
+/* ── Creative showcase ───────────────────────────────────── */
+
+export const showcase = {
+  eyebrow: "Creative in action",
+  title: "Room-context creative that converts",
+  lede: "Room-context imagery is the single biggest conversion lever in lighting — buyers commit once they can picture a fixture living in a real space. This is the lifestyle creative that carries the brand across Meta and the storefront.",
+  videos: [
+    { src: "/bedroom.mp4", caption: "Warm ambient layering" },
+    { src: "/bedroom%20(1).mp4", caption: "Feature lighting in context" },
+    { src: "/bedroom%20(2).mp4", caption: "Mood, scale and shadow" },
+  ],
+} as const;
+
 /* ── Appendix · Glossary ─────────────────────────────────── */
 
 export const glossary = {

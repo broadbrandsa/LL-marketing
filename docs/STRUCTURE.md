@@ -24,6 +24,7 @@ liquid-lighting-proposal/
 │   │   │   ├── objectives.tsx
 │   │   │   ├── audience.tsx
 │   │   │   ├── channels.tsx
+│   │   │   ├── showcase.tsx     # lifestyle video gallery (lazy-loaded, plays in view)
 │   │   │   ├── launch-approach.tsx
 │   │   │   ├── measurement.tsx
 │   │   │   ├── benchmarks.tsx   # KPIs & SA-verified benchmarks (month-by-month + sector context)

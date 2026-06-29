@@ -15,6 +15,7 @@ sections with a sticky nav for in-page navigation.
 | 03| Objectives & Success Measures | `#objectives` | Objectives table; CPA / secondary / tertiary metric hierarchy |
 | 04| Audience                    | `#audience`    | Homeowners and Trade; funnel-to-audience mapping |
 | 05| Channel Strategy            | `#channels`    | Tabs: Paid search · Paid social · SEO & email |
+| — | Creative showcase           | `#showcase`    | Lifestyle room-context video gallery (3 lazy-loaded square clips) |
 | 06| The Launch Approach         | `#approach`    | Soft launch → ramp gate → scale → hard launch timeline; Day 1 checklist |
 | 07| Measurement & Optimisation  | `#measurement` | Verification gate; weekly rhythm; test programme; reporting |
 | 08| KPIs & SA-Verified Benchmarks | `#benchmarks` | Month-by-month targets (CVR, ATC, AOV, ROAS, CPA, cart recovery, organic), LL-vs-benchmark comparison, derived CPA scenarios, SA inputs, sector context, Google Ads campaign split, sources |

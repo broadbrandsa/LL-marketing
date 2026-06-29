@@ -6,6 +6,7 @@ import { Opportunity } from "@/components/sections/opportunity";
 import { Objectives } from "@/components/sections/objectives";
 import { Audience } from "@/components/sections/audience";
 import { Channels } from "@/components/sections/channels";
+import { Showcase } from "@/components/sections/showcase";
 import { LaunchApproach } from "@/components/sections/launch-approach";
 import { Measurement } from "@/components/sections/measurement";
 import { Benchmarks } from "@/components/sections/benchmarks";
@@ -24,6 +25,7 @@ export default function Home() {
         <Objectives />
         <Audience />
         <Channels />
+        <Showcase />
         <LaunchApproach />
         <Measurement />
         <Benchmarks />
