@@ -10,7 +10,7 @@ sections with a sticky nav for in-page navigation.
 | # | Section                     | Anchor         | Content |
 | - | --------------------------- | -------------- | ------- |
 | — | Hero                        | `#top`         | Title, signed status, document metadata, primary CTAs, signed-PDF download |
-| 01| Executive Summary           | `#summary`     | The launch in one page; stat row; focus pillars |
+| 01| Executive Summary           | `#summary`     | Accordion: Overview · By the numbers · Where this plan focuses |
 | 02| The Opportunity             | `#opportunity` | Market context; three pillars; competitive picture; credibility |
 | 03| Objectives & Success Measures | `#objectives` | Objectives table; CPA / secondary / tertiary metric hierarchy |
 | 04| Audience                    | `#audience`    | Homeowners, Renovators & DIY; Trade & Specifiers; funnel-to-audience mapping |
@@ -21,9 +21,22 @@ sections with a sticky nav for in-page navigation.
 | 08| Measurement & Optimisation  | `#measurement` | Verification gate; weekly rhythm; test programme; reporting |
 | 09| KPIs & SA-Verified Benchmarks | `#benchmarks` | Month-by-month targets (CVR, ATC, AOV, ROAS, blended CPA total → R500, cart recovery, organic), LL-vs-benchmark comparison, blended-CPA approach, SA inputs, sector context, Google Ads campaign split, sources |
 | 10| Investment                  | `#investment`  | Line items (PPC media split 50/50 Google/Meta), what's covered, 3-month total, signed-PDF download |
-| — | Glossary (Appendix)         | `#glossary`    | Index of terms & abbreviations (CPA, ROAS, CVR, AOV, …) |
 | — | Closing                     | `#closing`     | "Let's switch it on" CTA |
 | — | Footer                      | —              | Agency details, doc/plan refs, signed status, signed-PDF download |
+
+## Pages
+
+| Route        | Purpose |
+| ------------ | ------- |
+| `/`          | The single-page proposal (all sections above) |
+| `/appendix`  | Glossary — index of terms & abbreviations (CPA, ROAS, CVR, AOV, …) on its own page, with a "Back to the proposal" link |
+
+## Navigation
+
+The header nav shows **Summary**, a **Sections** dropdown (Opportunity, Objectives,
+Audience, Channels, Approach, Measurement, Benchmarks, Investment), **Roadmap**, and
+**Appendix** (the `/appendix` page). Anchor links are path-aware — they jump in-page
+on `/` and route back to `/#section` from the appendix page.
 
 ## Downloadable asset
 

@@ -14,7 +14,8 @@ liquid-lighting-proposal/
 │   ├── app/
 │   │   ├── globals.css         # Tailwind v4 theme — brand tokens (charcoal + gold)
 │   │   ├── layout.tsx          # Root layout: fonts, metadata, <html class="dark">
-│   │   └── page.tsx            # Single route — composes all sections in order
+│   │   ├── page.tsx            # Home route "/" — composes all sections in order
+│   │   └── appendix/page.tsx   # "/appendix" — standalone Glossary page
 │   ├── components/
 │   │   ├── ui/                 # shadcn primitives (button, card, badge, tabs, …)
 │   │   ├── sections/           # One file per proposal section

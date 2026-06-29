@@ -35,19 +35,26 @@ export const download = {
   note: "The signed scope of work — Broadbrand Services (Pty) Ltd · Ref BB-LL-LAUNCH-2026-002.",
 } as const;
 
-export const nav = [
+// Top-level anchor links shown directly in the nav bar.
+export const navPrimary = [
   { id: "summary", label: "Summary" },
+  { id: "roadmap", label: "Roadmap" },
+] as const;
+
+// Grouped under a "Sections" dropdown in the nav bar.
+export const navSections = [
   { id: "opportunity", label: "Opportunity" },
   { id: "objectives", label: "Objectives" },
   { id: "audience", label: "Audience" },
   { id: "channels", label: "Channels" },
   { id: "approach", label: "Approach" },
-  { id: "roadmap", label: "Roadmap" },
   { id: "measurement", label: "Measurement" },
   { id: "benchmarks", label: "Benchmarks" },
   { id: "investment", label: "Investment" },
-  { id: "glossary", label: "Glossary" },
 ] as const;
+
+// Standalone pages (separate routes).
+export const navPages = [{ href: "/appendix", label: "Appendix" }] as const;
 
 /* ── 01 · Executive Summary ──────────────────────────────── */
 
@@ -55,7 +62,7 @@ export const summary = {
   lede: "Liquid Lighting is launching a premium, design-led lighting storefront for South African homes and trade buyers. This plan turns that launch into measured, compounding growth across paid, owned and earned channels.",
   body: [
     "The store goes live on a Shopify foundation with the full product catalogue, lifecycle automation, and search and commerce integrations in place from day one. Marketing launches alongside it as a single coordinated push rather than a scatter of disconnected tactics. Six paid campaigns — three on Google, three on Meta — go live together, supported by search-engine foundations and an email programme.",
-    "We launch deliberately. A soft launch opens the doors and proves that tracking, payments and fulfilment work end to end. A 48-hour ramp gate holds paid spend at 30% of cap until every order is verified against real Shopify data. Only then do we scale to a hard launch and full budget. The first twelve weeks are an intensive engagement window where we drive cost-per-acquisition down to target and lock in the cadences that carry the brand through the rest of the year.",
+    "We launch deliberately. A soft launch opens the doors and proves that tracking, payments and fulfilment work end to end. A 48-hour ramp gate holds paid spend at 30% of cap until every order is verified against real Shopify data. Only then do we scale to a hard launch and full budget. The first twelve weeks are an intensive engagement window where we drive the blended cost-per-acquisition down to a total of R500 and lock in the cadences that carry the brand through the rest of the year.",
   ],
   stats: [
     {
@@ -152,8 +159,8 @@ export const objectives = {
     },
     {
       objective: "Acquire efficiently",
-      meaning: "Drive cost-per-acquisition down to target through the engagement window.",
-      measure: "CPA vs target; ROAS by campaign; blended new-customer cost.",
+      meaning: "Drive the blended cost-per-acquisition down to a total of R500 by month 3.",
+      measure: "Blended CPA vs the R500 target; ROAS by campaign; blended new-customer cost.",
     },
     {
       objective: "Grow revenue",
@@ -171,14 +178,14 @@ export const objectives = {
       measure: "Indexed pages, keyword rankings, organic sessions and revenue.",
     },
   ],
-  note: "The specific CPA target is agreed against the confirmed media budget and product margins before launch, and reviewed at the end of the engagement window. This plan defines what we measure and how we act on it; the numeric targets live in the live performance dashboard so they stay current.",
+  note: "The blended CPA target is a single total of R500 by month 3 — stepping down R800 → R650 → R500 — agreed against the confirmed media budget and product margins, and tracked live against that target throughout the engagement.",
   metrics: {
     primary: {
       tier: "Primary",
       tag: "Our north-star metric",
       metric: "CPA",
       heading: "Cost per acquisition",
-      body: "The blended cost to acquire a paying customer across all paid channels. Every budget, bid, audience and creative decision is judged first against CPA: we scale what brings it down to target and cut what pushes it up. It is the single number the whole programme is steered by.",
+      body: "The blended cost to acquire a paying customer across all paid channels — tracked as a single total, with a target of R500 by month 3. Every budget, bid, audience and creative decision is judged first against CPA: we scale what brings it down toward R500 and cut what pushes it up. It is the single number the whole programme is steered by.",
     },
     secondary: {
       tier: "Secondary",
