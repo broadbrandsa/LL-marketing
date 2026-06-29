@@ -29,10 +29,15 @@ export function Reveal({
       typeof window !== "undefined" &&
       window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
-    if (prefersReducedMotion) {
-      // Reveal immediately on the next frame — no scroll-driven animation.
-      const raf = requestAnimationFrame(() => setShown(true));
-      return () => cancelAnimationFrame(raf);
+    // Already on screen at mount (or reduced motion / no observer support):
+    // reveal immediately so content is never left hidden behind the animation.
+    const rect = node.getBoundingClientRect();
+    const viewportH = window.innerHeight || document.documentElement.clientHeight;
+    const inView = rect.top < viewportH && rect.bottom > 0;
+
+    if (prefersReducedMotion || inView || typeof IntersectionObserver === "undefined") {
+      const t = setTimeout(() => setShown(true), 0);
+      return () => clearTimeout(t);
     }
 
     const observer = new IntersectionObserver(
@@ -48,7 +53,13 @@ export function Reveal({
     );
 
     observer.observe(node);
-    return () => observer.disconnect();
+
+    // Safety net: if the observer never fires (e.g. backgrounded tab), still reveal.
+    const fallback = setTimeout(() => setShown(true), 1800);
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallback);
+    };
   }, []);
 
   return (
