@@ -663,11 +663,27 @@ export const investment = {
 export const showcase = {
   eyebrow: "Creative asset examples",
   title: "Room-context creative that converts",
-  lede: "Example creative assets for the campaigns and organic social. Room-context imagery is the single biggest conversion lever in lighting — buyers commit once they can picture a fixture living in a real space. This is the lifestyle creative that carries the brand across Meta and the storefront.",
+  lede: "Example creative assets for the campaigns and organic social. Room-context imagery is the single biggest conversion lever in lighting — buyers commit once they can picture a fixture living in a real space. This is the lifestyle and product creative that carries the brand across Meta and the storefront.",
+  videosLabel: "Lifestyle — in motion",
   videos: [
     { src: "/bedroom.mp4", caption: "Warm ambient layering" },
     { src: "/bedroom%20(1).mp4", caption: "Feature lighting in context" },
     { src: "/bedroom%20(2).mp4", caption: "Mood, scale and shadow" },
+  ],
+  imagesLabel: "Product-led — stills",
+  images: [
+    {
+      src: "/hero-image-6a4264f4d8a362231d24dc35.png",
+      caption: "Tubo Lamp · Statement Series",
+    },
+    {
+      src: "/hero-image-6a4264f4d8a362231d24dc36.png",
+      caption: "Mallen Smoke · Statement Series",
+    },
+    {
+      src: "/hero-image-6a4264f4d8a362231d24dc37.png",
+      caption: "Niesen Lamp · Statement Series",
+    },
   ],
 } as const;
 

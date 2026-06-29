@@ -15,7 +15,7 @@ sections with a sticky nav for in-page navigation.
 | 03| Objectives & Success Measures | `#objectives` | Objectives table; CPA / secondary / tertiary metric hierarchy |
 | 04| Audience                    | `#audience`    | Homeowners, Renovators & DIY; Trade & Specifiers; funnel-to-audience mapping |
 | 05| Channel Strategy            | `#channels`    | Tabs: Paid search · Paid social · SEO, email & social (monthly newsletter + weekly organic Meta posts) |
-| — | Creative asset examples     | `#showcase`    | Lifestyle room-context video gallery (3 lazy-loaded square clips) |
+| — | Creative asset examples     | `#showcase`    | Lifestyle videos (3 lazy-loaded square clips) + product-led stills (3 square images) |
 | 06| The Launch Approach         | `#approach`    | Soft launch → ramp gate → scale → hard launch timeline; Day 1 checklist |
 | 07| The Roadmap                 | `#roadmap`     | 12-week Gantt: 6 paid campaigns, 1 newsletter/month, 1 Meta post/week (IG+FB), milestones |
 | 08| Measurement & Optimisation  | `#measurement` | Verification gate; weekly rhythm; test programme; reporting |
