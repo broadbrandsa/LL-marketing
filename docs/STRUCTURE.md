@@ -24,8 +24,9 @@ liquid-lighting-proposal/
 │   │   │   ├── objectives.tsx
 │   │   │   ├── audience.tsx
 │   │   │   ├── channels.tsx
-│   │   │   ├── showcase.tsx     # lifestyle video gallery (lazy-loaded, plays in view)
+│   │   │   ├── showcase.tsx     # creative asset examples — lifestyle video gallery (lazy)
 │   │   │   ├── launch-approach.tsx
+│   │   │   ├── roadmap.tsx      # 12-week Gantt: campaigns, newsletter, weekly social
 │   │   │   ├── measurement.tsx
 │   │   │   ├── benchmarks.tsx   # KPIs & SA-verified benchmarks (month-by-month + sector context)
 │   │   │   ├── investment.tsx   # incl. 50/50 Google/Meta media split

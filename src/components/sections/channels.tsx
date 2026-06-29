@@ -27,7 +27,7 @@ export function Channels() {
               <Megaphone className="size-4" /> Paid social
             </TabsTrigger>
             <TabsTrigger value="owned" className="gap-2 px-4 py-2 data-[state=active]:bg-gold data-[state=active]:text-[var(--ink)]">
-              <Mail className="size-4" /> SEO &amp; email
+              <Mail className="size-4" /> SEO, email &amp; social
             </TabsTrigger>
           </TabsList>
 
@@ -113,6 +113,10 @@ export function Channels() {
                 ))}
               </div>
             </div>
+            <NoteBlock
+              title={channels.seoEmail.social.title}
+              body={channels.seoEmail.social.body}
+            />
           </TabsContent>
         </Tabs>
       </Reveal>

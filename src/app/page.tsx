@@ -8,6 +8,7 @@ import { Audience } from "@/components/sections/audience";
 import { Channels } from "@/components/sections/channels";
 import { Showcase } from "@/components/sections/showcase";
 import { LaunchApproach } from "@/components/sections/launch-approach";
+import { Roadmap } from "@/components/sections/roadmap";
 import { Measurement } from "@/components/sections/measurement";
 import { Benchmarks } from "@/components/sections/benchmarks";
 import { Investment } from "@/components/sections/investment";
@@ -27,6 +28,7 @@ export default function Home() {
         <Channels />
         <Showcase />
         <LaunchApproach />
+        <Roadmap />
         <Measurement />
         <Benchmarks />
         <Investment />

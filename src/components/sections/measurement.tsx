@@ -9,7 +9,7 @@ export function Measurement() {
   return (
     <Section id="measurement" className="border-t border-border">
       <SectionHeading
-        index="07"
+        index="08"
         eyebrow="Measurement & Optimisation"
         title="How we read the data and act on it"
         lede={measurement.lede}

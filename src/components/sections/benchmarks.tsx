@@ -14,7 +14,7 @@ export function Benchmarks() {
   return (
     <Section id="benchmarks" className="border-t border-border">
       <SectionHeading
-        index="08"
+        index="09"
         eyebrow="KPIs & SA-Verified Benchmarks"
         title="What success looks like — month by month"
         lede={benchmarks.lede}
@@ -122,68 +122,39 @@ export function Benchmarks() {
         </div>
       </Reveal>
 
-      {/* Derived CPA model */}
+      {/* How the blended CPA reaches R500 */}
       <Reveal className="mt-14 flex items-center gap-2.5">
         <Calculator className="size-4 text-gold" aria-hidden />
         <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-          Derived CPA target for Liquid Lighting
+          {benchmarks.cpaApproach.title}
         </h3>
       </Reveal>
-      <Reveal className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground" delay={40}>
-        {benchmarks.cpaModel.note}
-      </Reveal>
-      <Reveal className="mt-5 overflow-hidden rounded-2xl border border-border" delay={60}>
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[40rem] border-collapse text-left">
-            <thead>
-              <tr className="bg-surface-2">
-                {["Channel & scenario", "Assumed CPC", "Assumed CVR", "Implied CPA"].map((h) => (
-                  <th
-                    key={h}
-                    className="px-5 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"
-                  >
-                    {h}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {benchmarks.cpaModel.rows.map((row, i) => {
-                const highlight = "highlight" in row && row.highlight;
-                return (
-                  <tr
-                    key={row.scenario}
-                    className={
-                      highlight ? "bg-gold-soft" : i % 2 ? "bg-surface/40" : "bg-surface/10"
-                    }
-                  >
-                    <td
-                      className={
-                        "border-t border-border px-5 py-4 align-top text-sm font-semibold " +
-                        (highlight ? "text-gold" : "text-foreground")
-                      }
-                    >
-                      {row.scenario}
-                    </td>
-                    <td className="border-t border-border px-5 py-4 align-top font-mono text-sm text-muted-foreground">
-                      {row.cpc}
-                    </td>
-                    <td className="border-t border-border px-5 py-4 align-top font-mono text-sm text-muted-foreground">
-                      {row.cvr}
-                    </td>
-                    <td
-                      className={
-                        "border-t border-border px-5 py-4 align-top font-mono text-sm font-semibold " +
-                        (highlight ? "text-gold" : "text-foreground")
-                      }
-                    >
-                      {row.cpa}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+      <Reveal className="mt-5 rounded-2xl border border-border bg-surface p-6 sm:p-7" delay={40}>
+        <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          {benchmarks.cpaApproach.note}
+        </p>
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          {benchmarks.cpaApproach.trajectory.map((t, i) => {
+            const isGoal = i === benchmarks.cpaApproach.trajectory.length - 1;
+            return (
+              <div
+                key={t.phase}
+                className={
+                  "flex items-center justify-between rounded-xl border p-4 " +
+                  (isGoal ? "border-gold/35 bg-gold-soft" : "border-border bg-background/30")
+                }
+              >
+                <span className="text-sm text-muted-foreground">{t.phase}</span>
+                <span
+                  className={
+                    "font-heading text-xl font-bold " + (isGoal ? "text-gold" : "text-foreground")
+                  }
+                >
+                  {t.value}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </Reveal>
 

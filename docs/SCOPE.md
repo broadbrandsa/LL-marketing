@@ -13,13 +13,14 @@ sections with a sticky nav for in-page navigation.
 | 01| Executive Summary           | `#summary`     | The launch in one page; stat row; focus pillars |
 | 02| The Opportunity             | `#opportunity` | Market context; three pillars; competitive picture; credibility |
 | 03| Objectives & Success Measures | `#objectives` | Objectives table; CPA / secondary / tertiary metric hierarchy |
-| 04| Audience                    | `#audience`    | Homeowners and Trade; funnel-to-audience mapping |
-| 05| Channel Strategy            | `#channels`    | Tabs: Paid search · Paid social · SEO & email |
-| — | Creative showcase           | `#showcase`    | Lifestyle room-context video gallery (3 lazy-loaded square clips) |
+| 04| Audience                    | `#audience`    | Homeowners, Renovators & DIY; Trade & Specifiers; funnel-to-audience mapping |
+| 05| Channel Strategy            | `#channels`    | Tabs: Paid search · Paid social · SEO, email & social (monthly newsletter + weekly organic Meta posts) |
+| — | Creative asset examples     | `#showcase`    | Lifestyle room-context video gallery (3 lazy-loaded square clips) |
 | 06| The Launch Approach         | `#approach`    | Soft launch → ramp gate → scale → hard launch timeline; Day 1 checklist |
-| 07| Measurement & Optimisation  | `#measurement` | Verification gate; weekly rhythm; test programme; reporting |
-| 08| KPIs & SA-Verified Benchmarks | `#benchmarks` | Month-by-month targets (CVR, ATC, AOV, ROAS, CPA, cart recovery, organic), LL-vs-benchmark comparison, derived CPA scenarios, SA inputs, sector context, Google Ads campaign split, sources |
-| 09| Investment                  | `#investment`  | Line items (PPC media split 50/50 Google/Meta), what's covered, 3-month total, signed-PDF download |
+| 07| The Roadmap                 | `#roadmap`     | 12-week Gantt: 6 paid campaigns, 1 newsletter/month, 1 Meta post/week (IG+FB), milestones |
+| 08| Measurement & Optimisation  | `#measurement` | Verification gate; weekly rhythm; test programme; reporting |
+| 09| KPIs & SA-Verified Benchmarks | `#benchmarks` | Month-by-month targets (CVR, ATC, AOV, ROAS, blended CPA total → R500, cart recovery, organic), LL-vs-benchmark comparison, blended-CPA approach, SA inputs, sector context, Google Ads campaign split, sources |
+| 10| Investment                  | `#investment`  | Line items (PPC media split 50/50 Google/Meta), what's covered, 3-month total, signed-PDF download |
 | — | Glossary (Appendix)         | `#glossary`    | Index of terms & abbreviations (CPA, ROAS, CVR, AOV, …) |
 | — | Closing                     | `#closing`     | "Let's switch it on" CTA |
 | — | Footer                      | —              | Agency details, doc/plan refs, signed status, signed-PDF download |

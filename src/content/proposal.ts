@@ -42,6 +42,7 @@ export const nav = [
   { id: "audience", label: "Audience" },
   { id: "channels", label: "Channels" },
   { id: "approach", label: "Approach" },
+  { id: "roadmap", label: "Roadmap" },
   { id: "measurement", label: "Measurement" },
   { id: "benchmarks", label: "Benchmarks" },
   { id: "investment", label: "Investment" },
@@ -199,12 +200,12 @@ export const objectives = {
 export const audience = {
   lede: "Two audiences shop the same store with different needs. The messaging, the proof points and the channels flex for each — but the brand stays one brand.",
   primary: {
-    label: "Primary · Homeowners & Renovators",
-    body: "People furnishing, renovating or refreshing a home. They shop room by room, are guided as much by feel as by spec, and want reassurance that what they choose will look right and last. They respond to lifestyle imagery, clear guidance, and low-risk offers like free delivery and easy returns.",
+    label: "Primary · Homeowners, Renovators & DIY",
+    body: "People furnishing, renovating or refreshing a home — including hands-on DIY buyers fitting lighting themselves. They shop room by room, are guided as much by feel as by spec, and want reassurance that what they choose will look right, fit and last. They respond to lifestyle imagery, clear how-to guidance, and low-risk offers like free delivery and easy returns.",
     points: [
       "Discovery on Meta and Google; research on category and product pages.",
-      "Won with room-led merchandising and clear product guidance.",
-      "Converted by social proof, delivery and returns confidence.",
+      "DIY buyers won with install guidance, specs and how-to content.",
+      "Converted by social proof, room-context imagery, delivery and returns confidence.",
     ],
   },
   secondary: {
@@ -315,7 +316,7 @@ export const channels = {
     email: {
       title: "Email & lifecycle flows",
       intro:
-        "The email programme runs on Shopify's native tool — a branded, mobile-rendered master template with plain-text fallback, and the first 10,000 sends a month included. Weekly campaign sends and product drops sit alongside four always-on automations that recover revenue independently:",
+        "The email programme runs on Shopify's native tool — a branded, mobile-rendered master template with plain-text fallback, and the first 10,000 sends a month included. One newsletter per month carries seasonal merchandising, new arrivals and offers, alongside three always-on automations that recover revenue independently:",
       flows: [
         {
           title: "Abandoned cart",
@@ -329,11 +330,11 @@ export const channels = {
           title: "Post-purchase & review",
           body: "Thank-you on order, then a review request at day 14 — driving repeat purchase and the social proof that fuels paid.",
         },
-        {
-          title: "Welcome",
-          body: "Three-email sequence triggered by the exit-intent welcome offer or a first purchase, introducing the brand and the range.",
-        },
       ],
+    },
+    social: {
+      title: "Organic social",
+      body: "One organic post per week on Instagram and Facebook — keeping the brand present between campaigns with room-context lifestyle imagery, new arrivals and lighting guidance. Drawn from the same creative pipeline as paid, so the brand looks consistent everywhere.",
     },
   },
 } as const;
@@ -380,7 +381,60 @@ export const approach = {
   ],
 } as const;
 
-/* ── 07 · Measurement & Optimisation ─────────────────────── */
+/* ── 07 · The Roadmap ────────────────────────────────────── */
+
+export const roadmap = {
+  lede: "The full 12-week schedule on one timeline: every campaign, the monthly newsletter, and weekly organic social — sequenced around the soft launch, ramp gate and hard launch.",
+  totalWeeks: 12,
+  prelaunch: {
+    label: "Week 0 · Pre-launch sprint",
+    note: "Accounts built, audiences seeded, Shopify automations configured, SEO foundations deployed and creative finalised — all at low daily caps.",
+  },
+  months: [
+    { label: "Month 1", sub: "Establish", weeks: [1, 2, 3, 4] },
+    { label: "Month 2", sub: "Optimise", weeks: [5, 6, 7, 8] },
+    { label: "Month 3", sub: "Compound", weeks: [9, 10, 11, 12] },
+  ],
+  milestones: [
+    { week: 1, label: "Soft launch + 48h ramp gate (30% cap)" },
+    { week: 2, label: "Hard launch — full budget" },
+    { week: 12, label: "End-of-engagement review" },
+  ],
+  lanes: [
+    {
+      group: "Google Ads",
+      items: [
+        { name: "Brand Search", type: "bar", start: 1, end: 12, tag: "Always-on" },
+        { name: "Non-brand Search", type: "bar", start: 1, end: 12 },
+        { name: "Performance Max / Shopping", type: "bar", start: 1, end: 12 },
+      ],
+    },
+    {
+      group: "Meta Ads",
+      items: [
+        { name: "Prospecting", type: "bar", start: 1, end: 12 },
+        { name: "Retargeting", type: "bar", start: 1, end: 12 },
+        { name: "Catalogue / Shop", type: "bar", start: 1, end: 12 },
+      ],
+    },
+    {
+      group: "Owned & organic",
+      items: [
+        { name: "Monthly newsletter", type: "marker", weeks: [2, 6, 10], tag: "1 / month" },
+        {
+          name: "Meta posts — Instagram + Facebook",
+          type: "weekly",
+          weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          tag: "1 / week",
+        },
+      ],
+    },
+  ],
+  rampNote:
+    "All six paid campaigns go live at 30% of cap on Day 1, hold through the 48-hour ramp gate, then scale to full budget at hard launch in Week 2. The newsletter and weekly social run on a fixed cadence throughout.",
+} as const;
+
+/* ── 08 · Measurement & Optimisation ─────────────────────── */
 
 export const measurement = {
   lede: "Optimisation is a discipline, not an afterthought. The plan builds in a verification gate, a weekly operating rhythm, and a rolling test programme.",
@@ -414,9 +468,9 @@ export const measurement = {
       window: "Weeks 5–7",
     },
     {
-      test: "Welcome flow",
-      hypothesis: "Social-proof intro converts better than product-led.",
-      window: "Week 10",
+      test: "Abandoned cart offer",
+      hypothesis: "A discount code on the second send lifts cart recovery.",
+      window: "Weeks 6–9",
     },
     {
       test: "Meta creative",
@@ -440,15 +494,13 @@ export const benchmarks = {
     { metric: "Add-to-cart rate — SA", value: "9.5 – 10.0%", source: "ECDB SA 2025" },
     { metric: "Cart abandonment rate — SA", value: "84.0 – 84.5%", source: "ECDB SA 2025" },
   ],
-  cpaModel: {
-    note: "Cost per purchase = CPC ÷ CVR. Lighting is moderately competitive in SA paid search, so we model slightly above the SA average CPC. The table shows the resulting CPA at three conversion-rate scenarios.",
-    rows: [
-      { scenario: "Google Ads — conservative", cpc: "R8", cvr: "1.5%", cpa: "R533" },
-      { scenario: "Google Ads — target", cpc: "R8", cvr: "2.0%", cpa: "R400" },
-      { scenario: "Google Ads — optimised (month 3)", cpc: "R6", cvr: "2.5%", cpa: "R240", highlight: true },
-      { scenario: "Meta Ads — conservative", cpc: "R25", cvr: "1.5%", cpa: "R1,667" },
-      { scenario: "Meta Ads — target", cpc: "R20", cvr: "2.0%", cpa: "R1,000" },
-      { scenario: "Blended target — 90-day plan", cpc: "Mix", cvr: "Mix", cpa: "R500 – R800", highlight: true },
+  cpaApproach: {
+    title: "How the blended CPA reaches R500",
+    note: "CPA is tracked as a single blended total across all paid channels — not split by platform. Modelled on the verified SA cost-per-click below and rising conversion rates, the blended total falls from R800 in month 1 to R500 by month 3 as tracking is verified and optimisation compounds.",
+    trajectory: [
+      { phase: "Month 1", value: "R800" },
+      { phase: "Month 2", value: "R650" },
+      { phase: "Month 3", value: "R500" },
     ],
   },
   monthly: {
@@ -471,7 +523,7 @@ export const benchmarks = {
           "Add-to-cart rate": "7–8%",
           "AOV target": "R1,500–2,000",
           "ROAS": "2–3×",
-          "Blended CPA": "≤ R800",
+          "Blended CPA": "R800",
           "Cart recovery": "8%",
           "Organic sessions": "Baseline",
         },
@@ -484,7 +536,7 @@ export const benchmarks = {
           "Add-to-cart rate": "8–9%",
           "AOV target": "R2,000–2,500",
           "ROAS": "3–4×",
-          "Blended CPA": "≤ R650",
+          "Blended CPA": "R650",
           "Cart recovery": "12%",
           "Organic sessions": "+30%",
         },
@@ -497,7 +549,7 @@ export const benchmarks = {
           "Add-to-cart rate": "9–10%",
           "AOV target": "R2,500+",
           "ROAS": "4×+",
-          "Blended CPA": "≤ R500",
+          "Blended CPA": "R500",
           "Cart recovery": "15%",
           "Organic sessions": "+60%",
         },
@@ -602,9 +654,9 @@ export const investment = {
 /* ── Creative showcase ───────────────────────────────────── */
 
 export const showcase = {
-  eyebrow: "Creative in action",
+  eyebrow: "Creative asset examples",
   title: "Room-context creative that converts",
-  lede: "Room-context imagery is the single biggest conversion lever in lighting — buyers commit once they can picture a fixture living in a real space. This is the lifestyle creative that carries the brand across Meta and the storefront.",
+  lede: "Example creative assets for the campaigns and organic social. Room-context imagery is the single biggest conversion lever in lighting — buyers commit once they can picture a fixture living in a real space. This is the lifestyle creative that carries the brand across Meta and the storefront.",
   videos: [
     { src: "/bedroom.mp4", caption: "Warm ambient layering" },
     { src: "/bedroom%20(1).mp4", caption: "Feature lighting in context" },

@@ -15,7 +15,7 @@ export function Investment() {
   return (
     <Section id="investment" className="border-t border-border bg-[var(--ink)]/40">
       <SectionHeading
-        index="09"
+        index="10"
         eyebrow="Investment"
         title="The engagement"
         lede={investment.lede}
