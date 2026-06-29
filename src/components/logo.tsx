@@ -1,41 +1,30 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import llIcon from "../../public/ll-icon.png";
+import fullLogo from "../../public/liquid-lighting-logo.png";
+import llIconWhite from "../../public/ll-icon-white.png";
 
 /**
- * Liquid Lighting wordmark — the brand "liquid wave" spiral mark
- * (pulled from the Shopify storefront) beside the type lockup.
+ * Official Liquid Lighting logo lockup (spiral mark + wordmark),
+ * pulled from the brand's Shopify theme assets.
  */
-export function Logo({
-  className,
-  showText = true,
-}: {
-  className?: string;
-  showText?: boolean;
-}) {
+export function Logo({ className }: { className?: string }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <LogoMark className="size-8 shrink-0" />
-      {showText && (
-        <span className="flex flex-col leading-none">
-          <span className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-foreground">
-            Liquid
-          </span>
-          <span className="font-heading text-[0.6rem] font-medium uppercase tracking-[0.34em] text-muted-foreground">
-            Lighting
-          </span>
-        </span>
-      )}
-    </span>
+    <Image
+      src={fullLogo}
+      alt="Liquid Lighting"
+      priority
+      sizes="200px"
+      className={cn("h-9 w-auto select-none", className)}
+    />
   );
 }
 
+/** The spiral mark on its own — white version, for use on dark backgrounds. */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <Image
-      src={llIcon}
+      src={llIconWhite}
       alt="Liquid Lighting"
-      priority
       sizes="48px"
       className={cn("object-contain", className)}
     />

@@ -5,10 +5,26 @@ import {
   Database,
   Lightbulb,
   PieChart,
+  BookText,
 } from "lucide-react";
 import { Section, SectionHeading } from "@/components/section";
 import { Reveal } from "@/components/reveal";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { benchmarks } from "@/content/proposal";
+
+function TriggerLabel({ icon: Icon, children }: { icon: React.ElementType; children: React.ReactNode }) {
+  return (
+    <span className="flex items-center gap-2.5">
+      <Icon className="size-4 shrink-0 text-gold" aria-hidden />
+      <span className="font-heading text-base font-semibold text-foreground">{children}</span>
+    </span>
+  );
+}
 
 export function Benchmarks() {
   return (
@@ -20,7 +36,7 @@ export function Benchmarks() {
         lede={benchmarks.lede}
       />
 
-      {/* Month-by-month targets */}
+      {/* Month-by-month targets — the visible lead */}
       <Reveal className="mt-12 flex items-center gap-2.5">
         <TrendingUp className="size-4 text-gold" aria-hidden />
         <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
@@ -46,8 +62,7 @@ export function Benchmarks() {
                   </span>
                   <span
                     className={
-                      "font-heading text-sm font-bold " +
-                      (isGoal ? "text-gold" : "text-foreground")
+                      "font-heading text-sm font-bold " + (isGoal ? "text-gold" : "text-foreground")
                     }
                   >
                     {month.label}
@@ -62,8 +77,7 @@ export function Benchmarks() {
                       <dt className="text-sm text-muted-foreground">{key}</dt>
                       <dd
                         className={
-                          "font-mono text-sm font-semibold " +
-                          (isGoal ? "text-gold" : "text-foreground")
+                          "font-mono text-sm font-semibold " + (isGoal ? "text-gold" : "text-foreground")
                         }
                       >
                         {month.metrics[key as keyof typeof month.metrics]}
@@ -77,187 +91,198 @@ export function Benchmarks() {
         })}
       </div>
 
-      {/* How LL compares */}
-      <Reveal className="mt-14 flex items-center gap-2.5">
-        <Scale className="size-4 text-gold" aria-hidden />
-        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-          How LL targets compare to benchmarks
-        </h3>
-      </Reveal>
-      <Reveal className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground" delay={40}>
-        {benchmarks.comparison.note}
-      </Reveal>
-      <Reveal className="mt-5 overflow-hidden rounded-2xl border border-border" delay={60}>
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[36rem] border-collapse text-left">
-            <thead>
-              <tr className="bg-surface-2">
-                <th className="px-5 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                  Metric
-                </th>
-                <th className="px-5 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                  Benchmark
-                </th>
-                <th className="px-5 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-gold/80">
-                  Liquid Lighting · M3
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {benchmarks.comparison.rows.map((row, i) => (
-                <tr key={row.metric} className={i % 2 ? "bg-surface/40" : "bg-surface/10"}>
-                  <td className="border-t border-border px-5 py-4 align-top text-sm font-medium text-foreground">
-                    {row.metric}
-                  </td>
-                  <td className="border-t border-border px-5 py-4 align-top font-mono text-sm text-muted-foreground">
-                    {row.benchmark}
-                  </td>
-                  <td className="border-t border-border px-5 py-4 align-top font-mono text-sm font-semibold text-gold">
-                    {row.ll}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Reveal>
-
-      {/* How the blended CPA reaches R500 */}
-      <Reveal className="mt-14 flex items-center gap-2.5">
-        <Calculator className="size-4 text-gold" aria-hidden />
-        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-          {benchmarks.cpaApproach.title}
-        </h3>
-      </Reveal>
-      <Reveal className="mt-5 rounded-2xl border border-border bg-surface p-6 sm:p-7" delay={40}>
-        <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-          {benchmarks.cpaApproach.note}
-        </p>
-        <div className="mt-6 grid gap-3 sm:grid-cols-3">
-          {benchmarks.cpaApproach.trajectory.map((t, i) => {
-            const isGoal = i === benchmarks.cpaApproach.trajectory.length - 1;
-            return (
-              <div
-                key={t.phase}
-                className={
-                  "flex items-center justify-between rounded-xl border p-4 " +
-                  (isGoal ? "border-gold/35 bg-gold-soft" : "border-border bg-background/30")
-                }
-              >
-                <span className="text-sm text-muted-foreground">{t.phase}</span>
-                <span
-                  className={
-                    "font-heading text-xl font-bold " + (isGoal ? "text-gold" : "text-foreground")
-                  }
-                >
-                  {t.value}
-                </span>
+      {/* All supporting benchmarks, collapsed into an accordion */}
+      <Reveal className="mt-12">
+        <Accordion
+          type="multiple"
+          defaultValue={["compare"]}
+          className="w-full rounded-2xl border border-border bg-surface px-5 sm:px-7"
+        >
+          {/* How LL compares */}
+          <AccordionItem value="compare">
+            <AccordionTrigger className="hover:no-underline">
+              <TriggerLabel icon={Scale}>How LL targets compare to benchmarks</TriggerLabel>
+            </AccordionTrigger>
+            <AccordionContent>
+              <p className="mb-4 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                {benchmarks.comparison.note}
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-border">
+                <table className="w-full min-w-[34rem] border-collapse text-left">
+                  <thead>
+                    <tr className="bg-surface-2">
+                      <th className="px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                        Metric
+                      </th>
+                      <th className="px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                        Benchmark
+                      </th>
+                      <th className="px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-gold/80">
+                        Liquid Lighting · M3
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {benchmarks.comparison.rows.map((row, i) => (
+                      <tr key={row.metric} className={i % 2 ? "bg-surface/40" : "bg-surface/10"}>
+                        <td className="border-t border-border px-5 py-3.5 align-top text-sm font-medium text-foreground">
+                          {row.metric}
+                        </td>
+                        <td className="border-t border-border px-5 py-3.5 align-top font-mono text-sm text-muted-foreground">
+                          {row.benchmark}
+                        </td>
+                        <td className="border-t border-border px-5 py-3.5 align-top font-mono text-sm font-semibold text-gold">
+                          {row.ll}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            );
-          })}
-        </div>
-      </Reveal>
+            </AccordionContent>
+          </AccordionItem>
 
-      {/* Verified SA inputs */}
-      <Reveal className="mt-14 flex items-center gap-2.5">
-        <Database className="size-4 text-gold" aria-hidden />
-        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-          Verified SA inputs
-        </h3>
-      </Reveal>
-      <Reveal className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" delay={40}>
-        {benchmarks.inputs.map((row) => (
-          <div
-            key={row.metric}
-            className="flex flex-col rounded-xl border border-border bg-surface p-5"
-          >
-            <span className="font-heading text-2xl font-bold text-gold">{row.value}</span>
-            <span className="mt-2 text-sm leading-snug text-foreground/90">{row.metric}</span>
-            <span className="mt-3 text-xs text-muted-foreground/80">{row.source}</span>
-          </div>
-        ))}
-      </Reveal>
-
-      {/* Sector context */}
-      <Reveal className="mt-14 flex items-center gap-2.5">
-        <Lightbulb className="size-4 text-gold" aria-hidden />
-        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-          Lighting &amp; home decor sector context
-        </h3>
-      </Reveal>
-      <Reveal className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground" delay={40}>
-        {benchmarks.sector.note}
-      </Reveal>
-      <Reveal className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" delay={60}>
-        {benchmarks.sector.benchmarks.map((row) => (
-          <div
-            key={row.name}
-            className="flex items-center justify-between gap-3 rounded-xl border border-border bg-surface/60 p-4"
-          >
-            <span className="text-sm leading-snug text-muted-foreground">{row.name}</span>
-            <span className="shrink-0 font-mono text-sm font-semibold text-foreground">
-              {row.value}
-            </span>
-          </div>
-        ))}
-      </Reveal>
-
-      {/* Why lighting converts lower */}
-      <Reveal className="mt-8 rounded-2xl border border-border bg-surface p-6 sm:p-7">
-        <h4 className="font-heading text-base font-semibold text-foreground">
-          {benchmarks.sector.whyTitle}
-        </h4>
-        <div className="mt-5 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
-          {benchmarks.sector.why.map((item) => (
-            <div key={item.point} className="border-l-2 border-gold/40 pl-4">
-              <div className="font-heading text-sm font-semibold text-foreground">
-                {item.point}
+          {/* Blended CPA */}
+          <AccordionItem value="cpa">
+            <AccordionTrigger className="hover:no-underline">
+              <TriggerLabel icon={Calculator}>{benchmarks.cpaApproach.title}</TriggerLabel>
+            </AccordionTrigger>
+            <AccordionContent>
+              <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                {benchmarks.cpaApproach.note}
+              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                {benchmarks.cpaApproach.trajectory.map((t, i) => {
+                  const isGoal = i === benchmarks.cpaApproach.trajectory.length - 1;
+                  return (
+                    <div
+                      key={t.phase}
+                      className={
+                        "flex items-center justify-between rounded-xl border p-4 " +
+                        (isGoal ? "border-gold/35 bg-gold-soft" : "border-border bg-background/30")
+                      }
+                    >
+                      <span className="text-sm text-muted-foreground">{t.phase}</span>
+                      <span
+                        className={
+                          "font-heading text-xl font-bold " + (isGoal ? "text-gold" : "text-foreground")
+                        }
+                      >
+                        {t.value}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.note}</p>
-            </div>
-          ))}
-        </div>
-      </Reveal>
+            </AccordionContent>
+          </AccordionItem>
 
-      {/* Google Ads campaign split */}
-      <Reveal className="mt-14 flex items-center gap-2.5">
-        <PieChart className="size-4 text-gold" aria-hidden />
-        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-          {benchmarks.paidSplit.title}
-        </h3>
-      </Reveal>
-      <Reveal className="mt-5 rounded-2xl border border-border bg-surface p-6 sm:max-w-2xl" delay={40}>
-        <div className="space-y-5">
-          {benchmarks.paidSplit.items.map((item) => (
-            <div key={item.label}>
-              <div className="flex items-baseline justify-between">
-                <span className="text-sm text-foreground">{item.label}</span>
-                <span className="font-heading text-sm font-bold text-gold">{item.pct}%</span>
+          {/* Verified SA inputs */}
+          <AccordionItem value="inputs">
+            <AccordionTrigger className="hover:no-underline">
+              <TriggerLabel icon={Database}>Verified SA inputs</TriggerLabel>
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {benchmarks.inputs.map((row) => (
+                  <div
+                    key={row.metric}
+                    className="flex flex-col rounded-xl border border-border bg-background/30 p-5"
+                  >
+                    <span className="font-heading text-2xl font-bold text-gold">{row.value}</span>
+                    <span className="mt-2 text-sm leading-snug text-foreground/90">{row.metric}</span>
+                    <span className="mt-3 text-xs text-muted-foreground/80">{row.source}</span>
+                  </div>
+                ))}
               </div>
-              <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-2">
-                <div className="h-full rounded-full bg-gold" style={{ width: `${item.pct}%` }} />
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-5 border-t border-border pt-4 text-xs leading-relaxed text-muted-foreground">
-          {benchmarks.paidSplit.note}
-        </p>
-      </Reveal>
+            </AccordionContent>
+          </AccordionItem>
 
-      {/* Sources */}
-      <Reveal className="mt-12 rounded-xl border border-border bg-surface/40 p-6" delay={60}>
-        <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-          Sources
-        </h4>
-        <ol className="mt-3 grid gap-1.5 text-xs leading-relaxed text-muted-foreground/80 sm:grid-cols-2">
-          {benchmarks.sources.map((s, i) => (
-            <li key={s} className="flex gap-2">
-              <span className="font-mono text-gold/60">{i + 1}.</span>
-              <span>{s}</span>
-            </li>
-          ))}
-        </ol>
+          {/* Sector context */}
+          <AccordionItem value="sector">
+            <AccordionTrigger className="hover:no-underline">
+              <TriggerLabel icon={Lightbulb}>Lighting &amp; home decor sector context</TriggerLabel>
+            </AccordionTrigger>
+            <AccordionContent>
+              <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                {benchmarks.sector.note}
+              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {benchmarks.sector.benchmarks.map((row) => (
+                  <div
+                    key={row.name}
+                    className="flex items-center justify-between gap-3 rounded-xl border border-border bg-background/30 p-4"
+                  >
+                    <span className="text-sm leading-snug text-muted-foreground">{row.name}</span>
+                    <span className="shrink-0 font-mono text-sm font-semibold text-foreground">
+                      {row.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <h4 className="mt-7 font-heading text-base font-semibold text-foreground">
+                {benchmarks.sector.whyTitle}
+              </h4>
+              <div className="mt-4 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+                {benchmarks.sector.why.map((item) => (
+                  <div key={item.point} className="border-l-2 border-gold/40 pl-4">
+                    <div className="font-heading text-sm font-semibold text-foreground">
+                      {item.point}
+                    </div>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.note}</p>
+                  </div>
+                ))}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+
+          {/* Google Ads split */}
+          <AccordionItem value="split">
+            <AccordionTrigger className="hover:no-underline">
+              <TriggerLabel icon={PieChart}>{benchmarks.paidSplit.title}</TriggerLabel>
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="rounded-xl border border-border bg-background/30 p-6 sm:max-w-2xl">
+                <div className="space-y-5">
+                  {benchmarks.paidSplit.items.map((item) => (
+                    <div key={item.label}>
+                      <div className="flex items-baseline justify-between">
+                        <span className="text-sm text-foreground">{item.label}</span>
+                        <span className="font-heading text-sm font-bold text-gold">{item.pct}%</span>
+                      </div>
+                      <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-2">
+                        <div
+                          className="h-full rounded-full bg-gold"
+                          style={{ width: `${item.pct}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-5 border-t border-border pt-4 text-xs leading-relaxed text-muted-foreground">
+                  {benchmarks.paidSplit.note}
+                </p>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+
+          {/* Sources */}
+          <AccordionItem value="sources" className="border-b-0">
+            <AccordionTrigger className="hover:no-underline">
+              <TriggerLabel icon={BookText}>Sources</TriggerLabel>
+            </AccordionTrigger>
+            <AccordionContent>
+              <ol className="grid gap-1.5 text-xs leading-relaxed text-muted-foreground/80 sm:grid-cols-2">
+                {benchmarks.sources.map((s, i) => (
+                  <li key={s} className="flex gap-2">
+                    <span className="font-mono text-gold/60">{i + 1}.</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ol>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </Reveal>
     </Section>
   );

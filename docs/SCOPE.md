@@ -19,7 +19,7 @@ sections with a sticky nav for in-page navigation.
 | 06| The Launch Approach         | `#approach`    | Soft launch → ramp gate → scale → hard launch timeline; Day 1 checklist |
 | 07| The Roadmap                 | `#roadmap`     | 12-week Gantt: 6 paid campaigns, 1 newsletter/month, 1 Meta post/week (IG+FB), milestones |
 | 08| Measurement & Optimisation  | `#measurement` | Verification gate; weekly rhythm; test programme; reporting |
-| 09| KPIs & SA-Verified Benchmarks | `#benchmarks` | Month-by-month targets (CVR, ATC, AOV, ROAS, blended CPA total → R500, cart recovery, organic), LL-vs-benchmark comparison, blended-CPA approach, SA inputs, sector context, Google Ads campaign split, sources |
+| 09| KPIs & SA-Verified Benchmarks | `#benchmarks` | Month-by-month targets (CVR, ATC, AOV, ROAS, blended CPA total → R500, cart recovery, organic) shown up front; supporting detail in an accordion (LL-vs-benchmark comparison, blended-CPA approach, SA inputs, sector context, Google Ads campaign split, sources) |
 | 10| Investment                  | `#investment`  | Line items (PPC media split 50/50 Google/Meta), what's covered, 3-month total, signed-PDF download |
 | — | Closing                     | `#closing`     | "Let's switch it on" CTA |
 | — | Footer                      | —              | Agency details, doc/plan refs, signed status, signed-PDF download |
