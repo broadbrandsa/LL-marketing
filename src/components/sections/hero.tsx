@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight, Download, BadgeCheck, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LogoMark } from "@/components/logo";
@@ -6,30 +7,37 @@ import { meta, download, primaryGoal } from "@/content/proposal";
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      {/* Ambient glow */}
+      {/* Background hero image */}
+      <Image
+        src="/don-kaveen-NFbwes_e-jI-unsplash.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        aria-hidden
+        className="pointer-events-none object-cover object-[center_30%]"
+      />
+      {/* Dark overlays — keep the left-aligned content legible */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-grain"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/88 to-background/25"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 left-1/2 size-[42rem] -translate-x-1/2 rounded-full opacity-60 blur-3xl"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/15 to-background/55"
+      />
+      {/* Ambient gold glow + grain on top */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-40 left-1/2 size-[42rem] -translate-x-1/2 rounded-full opacity-50 blur-3xl"
         style={{
           background:
             "radial-gradient(circle, rgb(197 160 40 / 0.16), transparent 65%)",
         }}
       />
-      {/* Concentric ring motif, echoing the brand mark */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-[-12rem] top-[-6rem] hidden size-[40rem] rounded-full border border-gold/10 md:block"
-      >
-        <div className="absolute inset-12 rounded-full border border-gold/10" />
-        <div className="absolute inset-28 rounded-full border border-gold/10" />
-        <div className="absolute inset-44 rounded-full border border-gold/[0.07]" />
-      </div>
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grain" />
 
-      <div className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-32 sm:pt-40 lg:px-8 lg:pb-28">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-20 pt-32 sm:pt-40 lg:px-8 lg:pb-28">
         <div className="fade-in flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-gold">
             <LogoMark className="size-4" />
