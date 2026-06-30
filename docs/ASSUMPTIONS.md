@@ -35,7 +35,8 @@ assumptions below frame what the plan is — and is not.
 ## Commercial
 
 - **Investment figures** (R30,000/mo media + R30,000/mo retainer over 3 months)
-  are the proposed terms and **exclude VAT**.
+  are the proposed terms. **Broadbrand is not VAT registered, so no VAT applies to
+  the retainer.**
 - **PPC media spend** is paid directly to the advertising platforms and is fully
   allocated to working ad budget.
 - **Spend levels are reviewed** at the end of the 3-month engagement window before

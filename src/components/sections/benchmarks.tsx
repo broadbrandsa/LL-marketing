@@ -95,7 +95,7 @@ export function Benchmarks() {
       <Reveal className="mt-12">
         <Accordion
           type="multiple"
-          defaultValue={["compare"]}
+          defaultValue={[]}
           className="w-full rounded-2xl border border-border bg-surface px-5 sm:px-7"
         >
           {/* How LL compares */}

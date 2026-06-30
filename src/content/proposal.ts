@@ -554,7 +554,7 @@ export const benchmarks = {
           "ROAS": "3–4×",
           "Blended CPA": "R650",
           "Cart recovery": "12%",
-          "Organic sessions": "+30%",
+          "Organic sessions": "+15%",
         },
       },
       {
@@ -567,7 +567,7 @@ export const benchmarks = {
           "ROAS": "4×+",
           "Blended CPA": "R500",
           "Cart recovery": "15%",
-          "Organic sessions": "+60%",
+          "Organic sessions": "+30%",
         },
       },
     ],
@@ -664,7 +664,7 @@ export const investment = {
     "Rolling A/B test programme across site, paid and owned",
     "Live performance dashboard and monthly written review",
   ],
-  note: "Figures exclude VAT. PPC media spend is funded by Liquid Lighting and paid directly to Google and Meta — Broadbrand adds no fee on top of media spend. Platform costs (the Shopify plan and any Shopify Email overage above 10,000 sends per month) are billed direct and sit outside this scope, as does the Shopify storefront build. Spend levels are reviewed at the end of the engagement window before moving to steady-state.",
+  note: "PPC media spend is funded by Liquid Lighting and paid directly to Google and Meta — Broadbrand adds no fee on top of media spend. Platform costs (the Shopify plan and any Shopify Email overage above 10,000 sends per month) are billed direct and sit outside this scope, as does the Shopify storefront build. Spend levels are reviewed at the end of the engagement window before moving to steady-state.",
 } as const;
 
 /* ── Creative showcase ───────────────────────────────────── */

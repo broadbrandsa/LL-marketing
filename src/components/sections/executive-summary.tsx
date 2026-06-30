@@ -27,7 +27,6 @@ export function ExecutiveSummary() {
         <Accordion
           type="single"
           collapsible
-          defaultValue="overview"
           className="w-full rounded-2xl border border-border bg-surface px-5 sm:px-7"
         >
           {/* Overview */}

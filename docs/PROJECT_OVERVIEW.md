@@ -36,8 +36,9 @@ engines (`robots: noindex, nofollow`).
 | Broadbrand retainer  | R30,000 | R90,000       |
 | **Total**            | **R60,000** | **R180,000** |
 
-Figures exclude VAT. PPC media is paid directly to the ad platforms (working
-budget); the retainer covers Broadbrand's strategy, build, creative and optimisation.
+Broadbrand is not VAT registered, so no VAT applies to the retainer. PPC media is
+paid directly to the ad platforms (working budget); the retainer covers Broadbrand's
+strategy, build, creative and optimisation.
 
 ## Tech stack
 
