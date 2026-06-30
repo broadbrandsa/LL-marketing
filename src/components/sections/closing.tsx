@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
@@ -7,16 +8,25 @@ import { closing, meta } from "@/content/proposal";
 export function Closing() {
   return (
     <section id="closing" className="relative overflow-hidden border-t border-border">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grain" />
+      {/* Background — glowing bulb */}
+      <Image
+        src="/aldo-vukaj-4I7_yWMVbRg-unsplash.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        aria-hidden
+        className="pointer-events-none object-cover object-center"
+      />
+      {/* Dark overlays keep the centred text legible */}
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-[-16rem] left-1/2 size-[44rem] -translate-x-1/2 rounded-full opacity-50 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, rgb(197 160 40 / 0.18), transparent 65%)",
-        }}
+        className="pointer-events-none absolute inset-0 bg-background/72"
       />
-      <div className="relative mx-auto w-full max-w-4xl px-6 py-28 text-center sm:py-36 lg:px-8">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/55 to-background"
+      />
+      <div className="relative z-10 mx-auto w-full max-w-4xl px-6 py-28 text-center sm:py-36 lg:px-8">
         <Reveal>
           <LogoMark className="mx-auto size-12" />
         </Reveal>
