@@ -27,6 +27,15 @@ export const meta = {
   signedDate: "14 May 2026",
 } as const;
 
+export const primaryGoal = {
+  label: "Primary goal",
+  metric: "Blended cost per acquisition (CPA)",
+  value: "R500",
+  sub: "by month 3",
+  trajectory: ["R800", "R650", "R500"],
+  note: "The single number the whole campaign is steered by.",
+} as const;
+
 export const download = {
   label: "Download signed plan (PDF)",
   shortLabel: "Signed PDF",

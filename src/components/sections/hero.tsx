@@ -1,7 +1,7 @@
-import { ArrowRight, ArrowUpRight, Download, BadgeCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, BadgeCheck, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LogoMark } from "@/components/logo";
-import { meta, download } from "@/content/proposal";
+import { meta, download, primaryGoal } from "@/content/proposal";
 
 export function Hero() {
   return (
@@ -79,8 +79,48 @@ export function Hero() {
           </Button>
         </div>
 
+        {/* Primary goal — CPA target */}
+        <div className="fade-in mt-12" style={{ animationDelay: "210ms" }}>
+          <div className="flex max-w-2xl flex-col gap-5 rounded-2xl border border-gold/30 bg-gradient-to-br from-gold-soft to-transparent p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                <Target className="size-3.5" aria-hidden />
+                {primaryGoal.label}
+              </div>
+              <div className="mt-2 font-heading text-lg font-semibold text-foreground">
+                {primaryGoal.metric}
+              </div>
+              <p className="mt-1 text-sm text-muted-foreground">{primaryGoal.note}</p>
+            </div>
+            <div className="shrink-0 sm:text-right">
+              <div className="flex items-baseline gap-2 sm:justify-end">
+                <span className="font-heading text-5xl font-extrabold tracking-tight text-gold">
+                  {primaryGoal.value}
+                </span>
+                <span className="text-sm text-muted-foreground">{primaryGoal.sub}</span>
+              </div>
+              <div className="mt-2 flex items-center gap-1.5 font-mono text-xs text-muted-foreground sm:justify-end">
+                {primaryGoal.trajectory.map((t, i) => (
+                  <span key={t} className="flex items-center gap-1.5">
+                    {i > 0 && <ArrowRight className="size-3 text-gold/50" aria-hidden />}
+                    <span
+                      className={
+                        i === primaryGoal.trajectory.length - 1
+                          ? "font-semibold text-gold"
+                          : ""
+                      }
+                    >
+                      {t}
+                    </span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Document meta strip */}
-        <dl className="fade-in mt-16 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-border pt-8 sm:grid-cols-4" style={{ animationDelay: "240ms" }}>
+        <dl className="fade-in mt-12 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-border pt-8 sm:grid-cols-4" style={{ animationDelay: "270ms" }}>
           <MetaItem label="Prepared for" value={meta.client} />
           <MetaItem label="Prepared by" value={meta.agency} />
           <MetaItem label="Document" value={meta.docRef} mono />
