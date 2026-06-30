@@ -1,4 +1,3 @@
-import { Info } from "lucide-react";
 import { Section, SectionHeading } from "@/components/section";
 import { Reveal } from "@/components/reveal";
 import { objectives } from "@/content/proposal";
@@ -50,17 +49,6 @@ export function Objectives() {
               ))}
             </tbody>
           </table>
-        </div>
-      </Reveal>
-
-      {/* Note */}
-      <Reveal className="mt-5" delay={80}>
-        <div className="flex gap-3 rounded-xl border-l-2 border-gold bg-gold-soft px-5 py-4">
-          <Info className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden />
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            <span className="font-semibold text-foreground">Targets are set, not assumed. </span>
-            {objectives.note}
-          </p>
         </div>
       </Reveal>
 

@@ -178,7 +178,6 @@ export const objectives = {
       measure: "Indexed pages, keyword rankings, organic sessions and revenue.",
     },
   ],
-  note: "The blended CPA target is a single total of R500 by month 3 — stepping down R800 → R650 → R500 — agreed against the confirmed media budget and product margins, and tracked live against that target throughout the engagement.",
   metrics: {
     primary: {
       tier: "Primary",
