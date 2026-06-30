@@ -331,15 +331,15 @@ export const channels = {
     email: {
       title: "Email & lifecycle flows",
       intro:
-        "The email programme runs on Shopify's native tool — a branded, mobile-rendered master template with plain-text fallback, and the first 10,000 sends a month included. One newsletter per month carries seasonal merchandising, new arrivals and offers, alongside three always-on automations that recover revenue independently:",
+        "The email programme runs on Shopify's native tool — a branded, mobile-rendered master template with plain-text fallback, and the first 10,000 sends a month included. It pairs a monthly newsletter with always-on automations that recover revenue independently:",
       flows: [
+        {
+          title: "Monthly newsletter",
+          body: "One send per month carrying seasonal merchandising, new arrivals and offers — keeping the list warm and driving repeat visits between campaigns.",
+        },
         {
           title: "Abandoned cart",
           body: "Three-stage sequence at 1 hour, 24 hours and 72 hours, with native cart-token discount codes on the second and third sends. The headline retention asset.",
-        },
-        {
-          title: "Browse abandonment",
-          body: "Two-stage send triggered on a viewed product without an add-to-cart, for known contacts.",
         },
         {
           title: "Post-purchase & review",
