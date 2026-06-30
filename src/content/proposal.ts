@@ -71,7 +71,7 @@ export const summary = {
   lede: "Liquid Lighting is launching a premium, design-led lighting storefront for South African homes and trade buyers. This plan turns that launch into measured, compounding growth across paid, owned and earned channels.",
   body: [
     "The store goes live on a Shopify foundation with the full product catalogue, lifecycle automation, and search and commerce integrations in place from day one. Marketing launches alongside it as a single coordinated push rather than a scatter of disconnected tactics. Six paid campaigns — three on Google, three on Meta — go live together, supported by search-engine foundations and an email programme.",
-    "We launch deliberately. A soft launch opens the doors and proves that tracking, payments and fulfilment work end to end. A 48-hour ramp gate holds paid spend at 30% of cap until every order is verified against real Shopify data. Only then do we scale to a hard launch and full budget. The first twelve weeks are an intensive engagement window where we drive the blended cost-per-acquisition down to a total of R500 and lock in the cadences that carry the brand through the rest of the year.",
+    "We launch deliberately. A soft launch opens the doors and proves that tracking, payments and fulfilment work end to end. A 1–2 week ramp gate holds paid spend at 30% of cap while Meta and Google verify the ad accounts against payments and lift their initial spend limits. Only then do we scale to a hard launch and full budget. The first twelve weeks are an intensive engagement window where we drive the blended cost-per-acquisition down to a total of R500 and lock in the cadences that carry the brand through the rest of the year.",
   ],
   stats: [
     {
@@ -81,10 +81,10 @@ export const summary = {
       detail: "3 Google Ads + 3 Meta Ads, live together on Day 1.",
     },
     {
-      value: "48",
-      unit: "h",
+      value: "1–2",
+      unit: "wk",
       label: "Ramp gate",
-      detail: "Spend capped until tracking is verified against real orders.",
+      detail: "Spend capped while Meta & Google verify the ad accounts against payments.",
     },
     {
       value: "12",
@@ -367,26 +367,26 @@ export const approach = {
     },
     {
       step: "2",
-      when: "Day 1–3",
-      title: "48-hour ramp gate",
-      body: "Spend held at 30% while conversions are verified end-to-end against real Shopify orders. Nothing scales until tracking is proven.",
+      when: "Weeks 1–2",
+      title: "1–2 week ramp gate",
+      body: "Spend held at 30% of cap while Meta and Google verify the ad accounts against payments and lift their initial spend limits. Nothing scales until the accounts are cleared.",
     },
     {
       step: "3",
-      when: "Day 3",
+      when: "Week 2",
       title: "Scale to full cap",
-      body: "With tracking confirmed, campaigns move to full daily cap and optimisation begins in earnest.",
+      body: "With the accounts verified and tracking confirmed, campaigns move to full daily cap and optimisation begins in earnest.",
     },
     {
       step: "4",
-      when: "Day 8",
+      when: "Weeks 2–3",
       title: "Hard launch",
       body: "Full-list hard-launch email. All campaigns at full budget. The brand is officially open.",
     },
   ],
   gate: {
     title: "Why the ramp gate matters",
-    body: "Scaling spend before tracking is verified is the most common — and most expensive — launch mistake. By holding at 30% of cap for the first 48 hours and reconciling every platform conversion against an actual Shopify order, we guarantee that when budget scales, it scales on data we trust. It costs two days; it saves weeks of misattributed spend.",
+    body: "Scaling spend before the ad accounts are verified is the most common — and most expensive — launch mistake. We hold at 30% of cap for the first week or two while Meta and Google verify the accounts against payments and lift their initial spend limits — and while we confirm conversions are tracking cleanly against real Shopify orders. Only once the accounts are cleared and the data is trustworthy does budget scale. It costs a week or two; it protects the whole launch.",
   },
   day1: [
     "Full Shopify storefront with the product catalogue live and merchandised by room and category.",
@@ -411,8 +411,9 @@ export const roadmap = {
     { label: "Month 3", sub: "Compound", weeks: [9, 10, 11, 12] },
   ],
   milestones: [
-    { week: 1, label: "Soft launch + 48h ramp gate (30% cap)" },
-    { week: 2, label: "Hard launch — full budget" },
+    { week: 1, label: "Soft launch — all six campaigns live at 30% of cap" },
+    { week: 2, label: "Ramp gate — Meta & Google verify accounts against payments (1–2 weeks)" },
+    { week: 3, label: "Hard launch — accounts cleared, full budget" },
     { week: 12, label: "End-of-engagement review" },
   ],
   lanes: [
@@ -446,7 +447,7 @@ export const roadmap = {
     },
   ],
   rampNote:
-    "All six paid campaigns go live at 30% of cap on Day 1, hold through the 48-hour ramp gate, then scale to full budget at hard launch in Week 2. The newsletter and weekly social run on a fixed cadence throughout.",
+    "All six paid campaigns go live at 30% of cap on Day 1 and hold through a 1–2 week ramp gate while Meta and Google verify the accounts against payments, then scale to full budget at hard launch once the accounts are cleared. The newsletter and weekly social run on a fixed cadence throughout.",
 } as const;
 
 /* ── 08 · Measurement & Optimisation ─────────────────────── */
@@ -655,7 +656,7 @@ export const investment = {
   ],
   includes: [
     "Six paid campaigns built, launched and managed across Google and Meta",
-    "48-hour ramp-gate verification and conversion reconciliation",
+    "Ramp-gate account verification and conversion reconciliation",
     "Creative pipeline — lifestyle, product-led and dynamic, refreshed on cadence",
     "Search Console, Merchant Centre and Meta Commerce setup and validation",
     "Technical SEO foundations and structured data",
