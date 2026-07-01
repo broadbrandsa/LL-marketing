@@ -712,6 +712,14 @@ export const showcase = {
       src: "/canvas-6-6a44afd02387dfaf69ad159f%402x.png",
       caption: "Rattan · hand-selected",
     },
+    {
+      src: "/main-canvas-6a44b3752387dfaf69ad18d7%402x.png",
+      caption: "Light your home · floor lamp",
+    },
+    {
+      src: "/main-canvas-6a44b3752387dfaf69ad18d8%402x.png",
+      caption: "Light your home · table lamp",
+    },
   ],
 } as const;
 
