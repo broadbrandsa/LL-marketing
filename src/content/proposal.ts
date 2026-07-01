@@ -689,7 +689,7 @@ export const showcase = {
   reels: [
     {
       src: "/WhatsApp%20Video%202026-06-30%20at%2014.53.12.mp4",
-      caption: "For Instagram & Facebook Reels",
+      caption: "For Stories & Reels",
     },
     {
       src: "/WhatsApp%20Video%202026-06-30%20at%2014.53.26.mp4",
