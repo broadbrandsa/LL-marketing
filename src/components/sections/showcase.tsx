@@ -62,7 +62,7 @@ function GalleryFigure({
 }) {
   return (
     <Reveal delay={delay}>
-      <figure className="group overflow-hidden rounded-2xl border border-border bg-surface">
+      <figure className="group overflow-hidden rounded-[3px] border border-border bg-surface">
         <div className={`relative overflow-hidden ${mediaClassName}`}>{children}</div>
         <figcaption className="flex items-center gap-2.5 border-t border-border px-5 py-4">
           <span className="size-1.5 shrink-0 rounded-full bg-gold" aria-hidden />
