@@ -673,6 +673,12 @@ export const showcase = {
   eyebrow: "Creative asset examples",
   title: "Room-context creative that converts",
   lede: "Example creative assets for the campaigns and organic social. Room-context imagery is the single biggest conversion lever in lighting — buyers commit once they can picture a fixture living in a real space. This is the lifestyle and product creative that carries the brand across Meta and the storefront.",
+  mockupsLabel: "In-feed ad mockups",
+  mockups: [
+    { src: "/facebook-ad-mockup.png", caption: "Facebook feed — Light your home" },
+    { src: "/facebook-ad-mockup%20(1).png", caption: "Facebook feed — Rattan" },
+    { src: "/facebook-ad-mockup%20(2).png", caption: "Facebook feed — Tubo Lamp" },
+  ],
   videosLabel: "Lifestyle — in motion",
   videos: [
     { src: "/bedroom.mp4", caption: "Warm ambient layering" },

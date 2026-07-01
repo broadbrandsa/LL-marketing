@@ -96,8 +96,31 @@ export function Showcase() {
         lede={showcase.lede}
       />
 
-      {/* Lifestyle videos */}
+      {/* In-feed ad mockups */}
       <div className="mt-12">
+        <GroupLabel>{showcase.mockupsLabel}</GroupLabel>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {showcase.mockups.map((mockup, i) => (
+            <GalleryFigure
+              key={mockup.src}
+              caption={mockup.caption}
+              delay={i * 90}
+              mediaClassName="aspect-[1000/1474]"
+            >
+              <Image
+                src={mockup.src}
+                alt={mockup.caption}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </GalleryFigure>
+          ))}
+        </div>
+      </div>
+
+      {/* Lifestyle videos */}
+      <div className="mt-14">
         <GroupLabel>{showcase.videosLabel}</GroupLabel>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {showcase.videos.map((video, i) => (
