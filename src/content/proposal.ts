@@ -704,6 +704,14 @@ export const showcase = {
       src: "/hero-image-6a4264f4d8a362231d24dc37.png",
       caption: "Niesen Lamp · Statement Series",
     },
+    {
+      src: "/main-canvas-6a44afd02387dfaf69ad15a0%402x.png",
+      caption: "Crafted for every space",
+    },
+    {
+      src: "/canvas-6-6a44afd02387dfaf69ad159f%402x.png",
+      caption: "Rattan · hand-selected",
+    },
   ],
 } as const;
 
