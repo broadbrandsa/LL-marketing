@@ -86,7 +86,10 @@ function GroupLabel({ children }: { children: React.ReactNode }) {
 
 export function Showcase() {
   return (
-    <Section id="showcase" className="border-t border-border bg-[var(--ink)]/40">
+    <Section
+      id="showcase"
+      className="border-t bg-background [--background:#ffffff] [--foreground:#1c1917] [--muted-foreground:#57534e] [--border:#e7e5e4] [--surface:#f6f5f4] [--surface-2:#eceae8] [--card:#ffffff] [--gold:#9a7d1c]"
+    >
       <SectionHeading
         eyebrow={showcase.eyebrow}
         title={showcase.title}
