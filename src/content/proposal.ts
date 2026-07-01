@@ -701,10 +701,6 @@ export const showcase = {
       caption: "Mallen Smoke · Statement Series",
     },
     {
-      src: "/hero-image-6a4264f4d8a362231d24dc37.png",
-      caption: "Niesen Lamp · Statement Series",
-    },
-    {
       src: "/main-canvas-6a44afd02387dfaf69ad15a0%402x.png",
       caption: "Crafted for every space",
     },
