@@ -53,15 +53,17 @@ function GalleryFigure({
   caption,
   children,
   delay,
+  mediaClassName = "aspect-square",
 }: {
   caption: string;
   children: React.ReactNode;
   delay: number;
+  mediaClassName?: string;
 }) {
   return (
     <Reveal delay={delay}>
       <figure className="group overflow-hidden rounded-2xl border border-border bg-surface">
-        <div className="relative aspect-square overflow-hidden">{children}</div>
+        <div className={`relative overflow-hidden ${mediaClassName}`}>{children}</div>
         <figcaption className="flex items-center gap-2.5 border-t border-border px-5 py-4">
           <span className="size-1.5 shrink-0 rounded-full bg-gold" aria-hidden />
           <span className="text-sm font-medium text-foreground">{caption}</span>
@@ -98,6 +100,23 @@ export function Showcase() {
           {showcase.videos.map((video, i) => (
             <GalleryFigure key={video.src} caption={video.caption} delay={i * 90}>
               <LazyVideo src={video.src} />
+            </GalleryFigure>
+          ))}
+        </div>
+      </div>
+
+      {/* Vertical social reels */}
+      <div className="mt-14">
+        <GroupLabel>{showcase.reelsLabel}</GroupLabel>
+        <div className="grid max-w-lg grid-cols-2 gap-4">
+          {showcase.reels.map((reel, i) => (
+            <GalleryFigure
+              key={reel.src}
+              caption={reel.caption}
+              delay={i * 90}
+              mediaClassName="aspect-[9/16]"
+            >
+              <LazyVideo src={reel.src} />
             </GalleryFigure>
           ))}
         </div>

@@ -679,6 +679,17 @@ export const showcase = {
     { src: "/bedroom%20(1).mp4", caption: "Feature lighting in context" },
     { src: "/bedroom%20(2).mp4", caption: "Mood, scale and shadow" },
   ],
+  reelsLabel: "Social reels — vertical",
+  reels: [
+    {
+      src: "/WhatsApp%20Video%202026-06-30%20at%2014.53.12.mp4",
+      caption: "For Instagram & Facebook Reels",
+    },
+    {
+      src: "/WhatsApp%20Video%202026-06-30%20at%2014.53.26.mp4",
+      caption: "For Stories & Reels",
+    },
+  ],
   imagesLabel: "Product-led — stills",
   images: [
     {
