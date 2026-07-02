@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Loose source docs kept out of the repo (content lives in the site / public)
+/Liquid_Lighting_Campaign_with_Links*.docx
+/liquid-lighting---gh-media-group-july-2026.pdf

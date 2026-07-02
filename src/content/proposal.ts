@@ -60,6 +60,7 @@ export const navSections = [
   { id: "measurement", label: "Measurement" },
   { id: "benchmarks", label: "Benchmarks" },
   { id: "investment", label: "Investment" },
+  { id: "add-on", label: "Influencer add-on" },
 ] as const;
 
 // Standalone pages (separate routes).
@@ -753,6 +754,85 @@ export const glossary = {
     { term: "CRI", full: "Colour Rendering Index", def: "How accurately a light source renders colour, scored 0–100." },
     { term: "Kelvin (K)", full: "Colour temperature", def: "How warm or cool a light appears, measured in kelvin." },
   ],
+} as const;
+
+/* ── Optional add-on · Influencer marketing ──────────────── */
+
+export const addon = {
+  eyebrow: "Optional add-on",
+  title: "Influencer marketing",
+  kicker: "In partnership with GH Media Group",
+  lede: "An optional extra, entirely separate from the core plan above — layer authentic South African creator reach on top of the launch if you'd like to.",
+  note: "This is an optional add-on. It is not included in the R60,000/month engagement and does not change the core scope or investment — choose a package only if you'd like to add influencer reach.",
+  objective:
+    "Drive awareness, engagement and traffic to the newly launched Liquid Lighting website through authentic South African creators who showcase beautiful homes, DIY upgrades, interior inspiration and aspirational living.",
+  platforms: "Instagram (primary), with all content shared to Facebook where applicable.",
+  download: {
+    label: "Download the influencer deck (PDF)",
+    shortLabel: "Influencer deck",
+    href: "/liquid-lighting-gh-media-group-july-2026.pdf",
+    filename: "Liquid-Lighting-GH-Media-Group-July-2026.pdf",
+    note: "Full influencer campaign deck — GH Media Group, July 2026.",
+  },
+  packages: [
+    {
+      option: "Option 1",
+      price: "R100,000",
+      name: "Homeowner Launch Package",
+      mix: [
+        { tier: "Micro", influencer: "Home With Tee", fit: "Strong home décor and renovation content with relatable homeowner storytelling." },
+        { tier: "Nano", influencer: "At Home With Christelle", fit: "Authentic lifestyle and home styling content that resonates with female homeowners." },
+        { tier: "Nano", influencer: "Dislin DIY", fit: "Practical DIY and home improvement content ideal for showcasing lighting installations." },
+      ],
+      totals: ["3 Reels", "2 Feed Posts", "8 Stories", "5 Facebook Shares"],
+    },
+    {
+      option: "Option 2",
+      price: "R150,000",
+      name: "Lifestyle & Home Inspiration Package",
+      mix: [
+        { tier: "Macro", influencer: "Chef Makoti", fit: "Strong family, lifestyle and home audience with high trust and engagement." },
+        { tier: "Micro", influencer: "Home With Tee", fit: "Renovation and décor inspiration." },
+        { tier: "Micro", influencer: "Stefan van der Merwe", fit: "Premium home, lifestyle and aspirational content." },
+        { tier: "Nano", influencer: "Home With Nto", fit: "Relatable homeowner and interior content." },
+      ],
+      totals: ["4 Reels", "3 Feed Posts", "13 Stories", "7 Facebook Shares"],
+    },
+    {
+      option: "Option 3",
+      price: "R250,000",
+      name: "Premium Website Launch Ecosystem",
+      mix: [
+        { tier: "Macro", influencer: "Chef Makoti", fit: "Trusted household personality with strong family and home appeal." },
+        { tier: "Macro", influencer: "Wendy Sibiya", fit: "Lifestyle creator with aspirational home and décor content." },
+        { tier: "Micro", influencer: "Home With Tee", fit: "Home renovations and décor inspiration." },
+        { tier: "Micro", influencer: "Stefan van der Merwe", fit: "Premium home and lifestyle content." },
+        { tier: "Micro", influencer: "Misha Levin", fit: "Modern lifestyle aesthetics and aspirational living." },
+        { tier: "Nano", influencer: "Home With Nto", fit: "Authentic homeowner content." },
+        { tier: "Nano", influencer: "At Home With Christelle", fit: "Home styling and décor inspiration." },
+      ],
+      totals: ["6 Reels", "5 Feed Posts", "22 Stories", "11 Facebook Shares"],
+    },
+  ],
+  themes: [
+    { title: "Light Up Your Space", body: "Creators showcase how lighting changes the atmosphere and functionality of their homes." },
+    { title: "Shop From Home", body: "Introducing South Africans to the convenience of the new Liquid Lighting website." },
+    { title: "Small Changes, Big Impact", body: "Simple upgrades that make a significant difference to everyday living spaces." },
+    { title: "Create Your Dream Home", body: "Aspirational interiors supported by practical, affordable lighting solutions." },
+  ],
+  hashtags: {
+    brand: ["#LiquidLighting", "#LightYourHome", "#ShopLiquidLighting"],
+    category: [
+      "#HomeDecor",
+      "#HomeRenovation",
+      "#InteriorDesign",
+      "#LightingDesign",
+      "#DIYHome",
+      "#SouthAfricanHomes",
+      "#HomeImprovement",
+      "#ModernLiving",
+    ],
+  },
 } as const;
 
 /* ── Closing ─────────────────────────────────────────────── */

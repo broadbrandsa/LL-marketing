@@ -12,6 +12,7 @@ import { Roadmap } from "@/components/sections/roadmap";
 import { Measurement } from "@/components/sections/measurement";
 import { Benchmarks } from "@/components/sections/benchmarks";
 import { Investment } from "@/components/sections/investment";
+import { AddOn } from "@/components/sections/add-on";
 import { Closing } from "@/components/sections/closing";
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
         <Measurement />
         <Benchmarks />
         <Investment />
+        <AddOn />
         <Closing />
       </main>
       <SiteFooter />
